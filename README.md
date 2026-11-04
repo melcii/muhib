@@ -45,5 +45,16 @@ keyPassword=...
 
 Without that file, release builds fall back to the debug key.
 
+## Releasing
+GitHub Actions builds and signs releases ([workflow](.github/workflows/release.yml)). Bump `versionCode` and `versionName` in `app/build.gradle.kts`, then push a tag:
+
+```bash
+git tag v0.3 && git push origin v0.3
+```
+
+The workflow builds the APK, signs it with the release key, checks the signature, and attaches it to a GitHub Release for that tag. It can also be run by hand from the Actions tab to get a signed test build without publishing.
+
+The key is stored as encrypted repository secrets (`KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`, `KEY_ALIAS`, `KEY_PASSWORD`). It is never in the code and never shown in build logs.
+
 ## Licenses
 The Inter typeface is used under the SIL Open Font License; see [`licenses/Inter-OFL.txt`](licenses/Inter-OFL.txt).
