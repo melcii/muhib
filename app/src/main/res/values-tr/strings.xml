@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt">En çok ihtiyacın olduğunda dokun</string>
+    <string name="widget_desc">Seni bekleyen bir şey var. En çok ihtiyacın olduğunda dokun.</string>
+    <string name="more_label">Biraz daha</string>
+    <string name="source_label">Kaynak</string>
+    <string name="view_source">Kaynağı gör</string>
+    <string name="share">Paylaş</string>
+    <string name="renews_label">Yenisi seni bekliyor</string>
+    <string name="morning">Sabah</string>
+    <string name="night">Gece</string>
+    <string name="quiet_reminder">Birkaç günde bir sessiz hatırlatma</string>
+    <string name="add_widget">Muhib\'i ana ekranına ekle</string>
+    <string name="cover_again">Yeniden ört</string>
+    <string name="credits">Kur\'an\'ın Arapça metni Tanzil Projesi\'nden alınmıştır. Hadis numaraları sunnah.com\'daki standart numaralandırmayı izler. Türkçe anlamlar bu demo için yazılmış sade çevirilerdir.</string>
+    <string name="notification_channel">Sessiz hatırlatmalar</string>
+    <string name="notification_title">Seni bekleyen bir şey var.</string>
+    <string name="welcome_greeting">Esselâmu aleyküm</string>
+    <string name="welcome_body">Muhib, ana ekranında sessiz bir yol arkadaşı. Bir ayet, bir hadis ya da bir sünnet orada, örtülü hâlde, ihtiyaç duyduğun anı bekler.</string>
+    <string name="welcome_continue">Devam</string>
+    <string name="welcome_widget_title">Hep yakınında olsun</string>
+    <string name="welcome_widget_lead">Ana ekranında, örtülü hâlde, ihtiyacın olana kadar bekler.</string>
+    <string name="welcome_widget_body">Bu senin Muhib widget\'ın. Bir kez dokun, senin için geleni gör; tekrar dokun, devamını oku. Her sabah ve her gece kendini yeniden örter.</string>
+    <string name="welcome_add">Ana ekrana ekle</string>
+    <string name="welcome_manual_title">Ya da kendin ekle</string>
+    <string name="welcome_manual_steps">1. Ana ekranında boş bir yere basılı tut.\n2. Widget\'lar\'a dokun.\n3. Muhib\'i bul ve ana ekranına sürükle.</string>
+    <string name="welcome_later">Sonra</string>
+    <string name="welcome_done_title">Seni bekliyor</string>
+    <string name="welcome_done_body">En çok ihtiyacın olduğunda dokun.</string>
+    <string name="welcome_done_note">Muhib birkaç günde bir sessiz bir not gönderebilir. İstediğin zaman uygulamadan kapatabilirsin.</string>
+    <string name="welcome_home">Ana ekrana git</string>
+    <string name="welcome_open_app">Muhib\'i aç</string>
+    <string name="tap_to_reveal">Görmek için dokun</string>
+    <string name="quiet_title">Sessiz hatırlatma</string>
+    <string name="quiet_subtitle">Birkaç günde bir sessiz bir not</string>
+    <string name="language">Dil</string>
+    <string name="other_language">English</string>
+    <string name="settings">Ayarlar</string>
+    <string name="back">Geri</string>
+    <string name="notifications_label">Bildirimler</string>
+</resources>

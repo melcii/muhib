@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="paper">#0D100F</color>
+    <color name="card">#161A18</color>
+    <color name="ink">#ECEFEA</color>
+    <color name="muted">#8A928D</color>
+    <color name="accent">#8FCBAE</color>
+    <color name="accent_soft">#1B2923</color>
+    <color name="hairline">#222826</color>
+    <color name="blur_ink">#668FCBAE</color>
+    <color name="glow">#338FCBAE</color>
+</resources>

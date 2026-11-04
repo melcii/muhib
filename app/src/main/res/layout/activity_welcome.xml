@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper"
+    android:fillViewport="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:paddingStart="28dp"
+        android:paddingTop="32dp"
+        android:paddingEnd="28dp"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:id="@+id/langToggle"
+            style="@style/Muhib.Link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/other_language"
+            android:textColor="@color/muted" />
+
+        <!-- Step 1: greeting -->
+        <LinearLayout
+            android:id="@+id/stepHello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clipChildren="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:clipChildren="false"
+                android:importantForAccessibility="noHideDescendants">
+
+                <View
+                    android:id="@+id/helloGlow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/glow" />
+
+                <FrameLayout
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/icon_circle">
+
+                    <ImageView
+                        android:id="@+id/helloStar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleX="1.6"
+                        android:scaleY="1.6"
+                        android:src="@drawable/ic_launcher_foreground" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/app_name_arabic"
+                android:textColor="@color/accent"
+                android:textSize="24sp" />
+
+            <TextView
+                style="@style/Muhib.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/welcome_greeting"
+                android:textSize="32sp" />
+
+            <TextView
+                style="@style/Muhib.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="@string/welcome_body"
+                android:textColor="@color/muted"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/helloContinue"
+                style="@style/Muhib.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="@string/welcome_continue" />
+        </LinearLayout>
+
+        <!-- Step 2: add the widget -->
+        <LinearLayout
+            android:id="@+id/stepWidget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/Muhib.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_widget_title" />
+
+            <TextView
+                style="@style/Muhib.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/welcome_widget_lead"
+                android:textColor="@color/muted" />
+
+            <FrameLayout
+                android:id="@+id/preview"
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/card_bg"
+                android:importantForAccessibility="noHideDescendants">
+
+                <FrameLayout
+                    android:id="@+id/previewCovered"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/previewBlur"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:tint="@color/blur_ink" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_star" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/inter_light"
+                            android:text="@string/prompt"
+                            android:textColor="@color/ink"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/previewRevealed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+
+                    <TextView
+                        android:id="@+id/previewArabic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ink"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/previewText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/inter_light"
+                        android:gravity="center"
+                        android:textColor="@color/ink"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/tapDot"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center"
+                    android:alpha="0"
+                    android:background="@drawable/tap_dot" />
+            </FrameLayout>
+
+            <TextView
+                style="@style/Muhib.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/welcome_widget_body"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/addWidget"
+                style="@style/Muhib.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/welcome_add" />
+
+            <TextView
+                android:id="@+id/manualTitle"
+                style="@style/Muhib.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/welcome_manual_title" />
+
+            <TextView
+                android:id="@+id/manualSteps"
+                style="@style/Muhib.Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/welcome_manual_steps"
+                android:textColor="@color/muted"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/later"
+                style="@style/Muhib.Link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/welcome_later"
+                android:textColor="@color/muted" />
+        </LinearLayout>
+
+        <!-- Step 3: done -->
+        <LinearLayout
+            android:id="@+id/stepDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clipChildren="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:clipChildren="false"
+                android:importantForAccessibility="noHideDescendants">
+
+                <View
+                    android:id="@+id/ring1"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:alpha="0"
+                    android:background="@drawable/ring" />
+
+                <View
+                    android:id="@+id/ring2"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:alpha="0"
+                    android:background="@drawable/ring" />
+
+                <FrameLayout
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/icon_circle">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleX="1.6"
+                        android:scaleY="1.6"
+                        android:src="@drawable/ic_launcher_foreground" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <TextView
+                style="@style/Muhib.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/welcome_done_title" />
+
+            <TextView
+                style="@style/Muhib.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="@string/welcome_done_body"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.35"
+                android:text="@string/welcome_done_note"
+                android:textColor="@color/muted"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/goHome"
+                style="@style/Muhib.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="@string/welcome_home" />
+
+            <TextView
+                android:id="@+id/openApp"
+                style="@style/Muhib.Link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/welcome_open_app" />
+        </LinearLayout>
+    </FrameLayout>
+</ScrollView>

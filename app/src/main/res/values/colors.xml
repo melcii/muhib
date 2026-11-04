@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="paper">#F6F5F1</color>
+    <color name="card">#FFFFFF</color>
+    <color name="ink">#1B1F1D</color>
+    <color name="muted">#858A86</color>
+    <color name="accent">#2F6B55</color>
+    <color name="accent_soft">#E6EFEA</color>
+    <color name="hairline">#ECEAE4</color>
+    <color name="blur_ink">#4D2F6B55</color>
+    <color name="glow">#382F6B55</color>
+    <color name="icon_bg">#2F6B55</color>
+    <color name="icon_fg">#F6F5F1</color>
+</resources>

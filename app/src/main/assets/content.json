@@ -1,0 +1,398 @@
+{
+  "_note": "Demo content for Muhib. Types: ayah, hadith, sunnah, chapter. 'headline' is optional and overrides the default \"This <type> came when you needed it the most\". Qur'an Arabic is from the Tanzil Project (tanzil.net). Hadith Arabic and numbering checked against the standard collections. English meanings are simple renderings written for this demo. Turkish ('tr') renderings were also written for this demo and should be reviewed by a Turkish speaker.",
+  "items": [
+    {
+      "id": "ayah-94-5",
+      "type": "ayah",
+      "headline": "These ayat came when you needed them the most",
+      "arabic": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا\nإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+      "text": "So surely with hardship comes ease. Surely with hardship comes ease.",
+      "source": "Qur'an 94:5–6 · Surah ash-Sharh",
+      "more": "Allah says it twice. Scholars of tafsir noticed that “the hardship” (al-ʿusr) carries the definite article both times — it is the same hardship — while “ease” (yusr) does not, pointing to more than one ease. From this it was said among the early Muslims: one hardship will never overpower two eases.\n\nThis surah came down in Makkah, in some of the hardest years of the Prophet's ﷺ life. It was said to him first, and then to every tired heart after him.",
+      "link": "https://quran.com/94/5-6",
+      "tr": {
+        "headline": "Bu ayetler tam ihtiyacın olduğu anda geldi",
+        "text": "Şüphesiz zorlukla beraber bir kolaylık vardır. Gerçekten de zorlukla beraber bir kolaylık vardır.",
+        "source": "Kur'an 94:5–6 · İnşirah Suresi",
+        "more": "Allah bunu iki kez söylüyor. Tefsir âlimleri, “zorluk” (el-usr) kelimesinin iki seferde de belirli geldiğine, yani aynı zorluk olduğuna; “kolaylık” (yusr) kelimesinin ise belirsiz geldiğine, yani birden fazla kolaylığa işaret ettiğine dikkat çekmişlerdir. Bu yüzden ilk Müslümanlar arasında şöyle denmiştir: Bir zorluk iki kolaylığa asla galip gelemez.\n\nBu sure, Peygamber'in ﷺ hayatının en zor yıllarından birinde Mekke'de indi. Önce ona, sonra ondan sonra gelen her yorgun kalbe söylendi."
+      }
+    },
+    {
+      "id": "ayah-2-286",
+      "type": "ayah",
+      "arabic": "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+      "text": "Allah does not burden a soul with more than it can bear.",
+      "source": "Qur'an 2:286 · Surah al-Baqarah",
+      "more": "These words open the final ayah of Surah al-Baqarah. Whatever you are carrying right now was measured for you by the One who knows you best. It is within your capacity, even when it doesn't feel that way.\n\nThe same ayah ends with a du'a you can make tonight: “Our Lord, do not lay on us a burden we have no strength to bear. Pardon us, forgive us, and have mercy on us.”\n\nThe Prophet ﷺ said that whoever recites the last two ayat of al-Baqarah at night, they will be enough for him (Sahih al-Bukhari 5009).",
+      "link": "https://quran.com/2/286",
+      "tr": {
+        "text": "Allah hiçbir kimseye gücünün yetmeyeceği bir yük yüklemez.",
+        "source": "Kur'an 2:286 · Bakara Suresi",
+        "more": "Bu sözler Bakara Suresi'nin son ayetinin başıdır. Şu an taşıdığın her şey, seni en iyi tanıyan tarafından senin için ölçülmüştür. Öyle hissettirmese bile gücünün yettiği bir yüktür.\n\nAynı ayet, bu gece edebileceğin bir duayla biter: “Rabbimiz, bize gücümüzün yetmeyeceği yükü yükleme. Bizi affet, bizi bağışla ve bize merhamet et.”\n\nPeygamber ﷺ, Bakara Suresi'nin son iki ayetini gece okuyana bunların yeteceğini söylemiştir (Sahih-i Buhari 5009)."
+      }
+    },
+    {
+      "id": "ayah-13-28",
+      "type": "ayah",
+      "arabic": "الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُمْ بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+      "text": "Those who believe, and whose hearts find rest in the remembrance of Allah. Truly, it is in the remembrance of Allah that hearts find rest.",
+      "source": "Qur'an 13:28 · Surah ar-Raʿd",
+      "more": "Allah did not say that hearts find rest in getting what they want, or in everything going to plan. He said they find rest in remembering Him.\n\nRemembrance can be very small: “SubhanAllah” while you wait, “Alhamdulillah” after a sip of water. Try saying “La ilaha illa Allah” slowly a few times right now.",
+      "link": "https://quran.com/13/28",
+      "tr": {
+        "text": "Onlar iman edenler ve kalpleri Allah'ı anmakla huzur bulanlardır. İyi bilin ki kalpler ancak Allah'ı anmakla huzur bulur.",
+        "source": "Kur'an 13:28 · Ra'd Suresi",
+        "more": "Allah, kalplerin istediklerine kavuşmakla ya da her şeyin plana göre gitmesiyle huzur bulacağını söylemedi. Kalplerin O'nu anmakla huzur bulacağını söyledi.\n\nZikir çok küçük olabilir: beklerken bir “Sübhanallah”, bir yudum sudan sonra bir “Elhamdülillah”. Şimdi birkaç kez, yavaşça “Lâ ilâhe illallah” demeyi dene."
+      }
+    },
+    {
+      "id": "ayah-2-186",
+      "type": "ayah",
+      "arabic": "وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ",
+      "text": "And when My servants ask you about Me: I am near. I answer the call of the one who calls, whenever he calls on Me.",
+      "source": "Qur'an 2:186 · Surah al-Baqarah",
+      "more": "In many places where people asked the Prophet ﷺ a question, the Qur'an replies with “Say: …”, telling him what to answer. Here there is no “say”. Allah answers directly, with no one in between: “I am near.”\n\nWhatever you are holding in your heart, you can say it to Him now, in your own words and in any language.",
+      "link": "https://quran.com/2/186",
+      "tr": {
+        "text": "Kullarım sana beni sorduklarında, şüphesiz ben yakınım. Bana dua ettiğinde dua edenin duasına karşılık veririm.",
+        "source": "Kur'an 2:186 · Bakara Suresi",
+        "more": "İnsanların Peygamber'e ﷺ soru sorduğu pek çok yerde Kur'an “De ki: …” diye cevap verir ve ona ne söyleyeceğini bildirir. Burada “de ki” yoktur. Allah, arada kimse olmadan doğrudan cevap verir: “Ben yakınım.”\n\nKalbinde ne taşıyorsan, şimdi O'na kendi sözlerinle ve dilediğin dilde söyleyebilirsin."
+      }
+    },
+    {
+      "id": "ayah-39-53",
+      "type": "ayah",
+      "arabic": "قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنْفُسِهِمْ لَا تَقْنَطُوا مِنْ رَحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا ۚ إِنَّهُ هُوَ الْغَفُورُ الرَّحِيمُ",
+      "text": "Say: “O My servants who have wronged themselves, do not despair of the mercy of Allah. Allah forgives all sins. He is the Forgiving, the Merciful.”",
+      "source": "Qur'an 39:53 · Surah az-Zumar",
+      "more": "Allah calls them “My servants”, in the same breath as describing them as people who went too far against themselves. He did not wait for them to be perfect before calling them His.\n\nMany scholars counted this among the most hope-giving ayat in the whole Qur'an. Whatever is behind you, the door is still open.",
+      "link": "https://quran.com/39/53",
+      "tr": {
+        "text": "De ki: “Ey kendi nefislerine karşı haddi aşan kullarım! Allah'ın rahmetinden ümidinizi kesmeyin. Allah bütün günahları bağışlar. Şüphesiz O, çok bağışlayandır, çok merhamet edendir.”",
+        "source": "Kur'an 39:53 · Zümer Suresi",
+        "more": "Allah onlara “kullarım” diye hitap ediyor; hem de nefislerine karşı haddi aştıklarını söylediği aynı cümlede. Onları kendisine ait saymak için kusursuz olmalarını beklemedi.\n\nPek çok âlim bu ayeti Kur'an'daki en çok ümit veren ayetler arasında saymıştır. Geride ne bıraktıysan, kapı hâlâ açık."
+      }
+    },
+    {
+      "id": "ayah-65-2",
+      "type": "ayah",
+      "headline": "These ayat came when you needed them the most",
+      "arabic": "وَمَنْ يَتَّقِ اللَّهَ يَجْعَلْ لَهُ مَخْرَجًا\nوَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ ۚ وَمَنْ يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+      "text": "Whoever is mindful of Allah, He will make a way out for him, and provide for him from where he never expected. And whoever puts his trust in Allah, He is enough for him.",
+      "source": "Qur'an 65:2–3 · Surah at-Talaq",
+      "more": "These words come in the middle of a surah about divorce, one of the most painful and uncertain moments in a person's life. Right there, Allah promises a way out, and provision from places you would never think to look.\n\n“He is enough for him” (fa huwa ḥasbuh). Not enough for part of the problem. Enough.",
+      "link": "https://quran.com/65/2-3",
+      "tr": {
+        "headline": "Bu ayetler tam ihtiyacın olduğu anda geldi",
+        "text": "Kim Allah'tan sakınırsa, Allah ona bir çıkış yolu açar ve onu hiç ummadığı yerden rızıklandırır. Kim Allah'a tevekkül ederse, O ona yeter.",
+        "source": "Kur'an 65:2–3 · Talak Suresi",
+        "more": "Bu sözler, boşanmayı anlatan bir surenin ortasında gelir; bir insanın hayatındaki en acı ve en belirsiz anlardan biri. Tam orada Allah bir çıkış yolu ve aklına bile gelmeyecek yerlerden rızık vaat eder.\n\n“O ona yeter” (fe huve hasbuh). Sorunun bir kısmına değil. Tamamen yeter."
+      }
+    },
+    {
+      "id": "ayah-93-3",
+      "type": "ayah",
+      "arabic": "مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ",
+      "text": "Your Lord has not left you, and He is not displeased with you.",
+      "source": "Qur'an 93:3 · Surah ad-Duha",
+      "more": "Once, when the Prophet ﷺ was ill and could not stand for the night prayer for two or three nights, someone mocked that his Lord had abandoned him (Sahih al-Bukhari 4950). Then this surah came, opening with an oath by the morning light.\n\nIf you are in a quiet season where Allah feels far, read Surah ad-Duha in full tonight. Its next promise is: “Your Lord will give you, and you will be content.”",
+      "link": "https://quran.com/93/3",
+      "tr": {
+        "text": "Rabbin seni terk etmedi, sana darılmadı da.",
+        "source": "Kur'an 93:3 · Duha Suresi",
+        "more": "Bir keresinde Peygamber ﷺ hastalanmış ve iki üç gece gece namazına kalkamamıştı. Biri, Rabbinin onu terk ettiğini söyleyerek alay etti (Sahih-i Buhari 4950). Ardından sabahın aydınlığına yeminle başlayan bu sure indi.\n\nAllah'ı uzak hissettiğin sessiz bir dönemdeysen, bu gece Duha Suresi'nin tamamını oku. Sonraki vaadi şudur: “Rabbin sana verecek, sen de razı olacaksın.”"
+      }
+    },
+    {
+      "id": "ayah-12-86",
+      "type": "ayah",
+      "arabic": "إِنَّمَا أَشْكُو بَثِّي وَحُزْنِي إِلَى اللَّهِ",
+      "text": "I only complain of my sorrow and my grief to Allah.",
+      "source": "Qur'an 12:86 · Surah Yusuf",
+      "more": "These are the words of Prophet Yaʿqub, after years of not knowing what had happened to his son Yusuf. He grieved until his eyes turned white (12:84), and Allah still honoured him and called him patient.\n\nGrief is not a weakness of faith. Yaʿqub shows where to take it: not away from Allah, but to Him.",
+      "link": "https://quran.com/12/86",
+      "tr": {
+        "text": "Ben derdimi ve hüznümü yalnızca Allah'a şikâyet ediyorum.",
+        "source": "Kur'an 12:86 · Yusuf Suresi",
+        "more": "Bunlar, oğlu Yusuf'a ne olduğunu yıllarca bilemeyen Hz. Yakub'un sözleridir. Gözlerine ak düşene kadar üzüldü (12:84); Allah yine de onu onurlandırdı.\n\nHüzün imanın zayıflığı değildir. Yakub onu nereye götüreceğimizi gösterir: Allah'tan uzağa değil, O'na."
+      }
+    },
+    {
+      "id": "ayah-20-46",
+      "type": "ayah",
+      "arabic": "قَالَ لَا تَخَافَا ۖ إِنَّنِي مَعَكُمَا أَسْمَعُ وَأَرَىٰ",
+      "text": "He said: “Do not be afraid. I am with you both. I hear, and I see.”",
+      "source": "Qur'an 20:46 · Surah Ta-Ha",
+      "more": "Musa and Harun were afraid to face Pharaoh, the most powerful tyrant of their time. Allah did not tell them the task was small. He told them He would be with them, hearing and seeing.\n\nWhatever you are walking into, you are not walking into it alone.",
+      "link": "https://quran.com/20/46",
+      "tr": {
+        "text": "Allah buyurdu: “Korkmayın! Şüphesiz ben sizinle beraberim; işitirim ve görürüm.”",
+        "source": "Kur'an 20:46 · Taha Suresi",
+        "more": "Musa ve Harun, zamanlarının en güçlü zalimi Firavun'un karşısına çıkmaktan korkuyorlardı. Allah onlara görevin küçük olduğunu söylemedi. Onlarla birlikte olduğunu, işittiğini ve gördüğünü söyledi.\n\nNeyin içine yürüyorsan, oraya yalnız yürümüyorsun."
+      }
+    },
+    {
+      "id": "ayah-2-153",
+      "type": "ayah",
+      "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ ۚ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+      "text": "O you who believe, seek help through patience and prayer. Allah is with those who are patient.",
+      "source": "Qur'an 2:153 · Surah al-Baqarah",
+      "more": "Help comes through two doors here: sabr (holding steady) and salah.\n\nWhen something distressed the Prophet ﷺ, he would pray (Sunan Abi Dawud 1319). If you can, pray two rak'ahs now, even if you have nothing to bring but the words of the prayer itself.",
+      "link": "https://quran.com/2/153",
+      "tr": {
+        "text": "Ey iman edenler! Sabır ve namazla yardım dileyin. Şüphesiz Allah sabredenlerle beraberdir.",
+        "source": "Kur'an 2:153 · Bakara Suresi",
+        "more": "Burada yardım iki kapıdan gelir: sabır (dayanıp sebat etmek) ve namaz.\n\nBir şey Peygamber'i ﷺ sıkıntıya soktuğunda namaz kılardı (Sünen-i Ebu Davud 1319). Gücün yetiyorsa şimdi iki rekât kıl; getirecek bir şeyin namazın kendi sözlerinden başka olmasa bile."
+      }
+    },
+    {
+      "id": "hadith-muslim-2999",
+      "type": "hadith",
+      "arabic": "عَجَبًا لأَمْرِ الْمُؤْمِنِ، إِنَّ أَمْرَهُ كُلَّهُ خَيْرٌ، وَلَيْسَ ذَاكَ لأَحَدٍ إِلاَّ لِلْمُؤْمِنِ: إِنْ أَصَابَتْهُ سَرَّاءُ شَكَرَ فَكَانَ خَيْرًا لَهُ، وَإِنْ أَصَابَتْهُ ضَرَّاءُ صَبَرَ فَكَانَ خَيْرًا لَهُ",
+      "text": "How wonderful is the affair of the believer: all of it is good for him, and that is for no one except the believer. If something good comes to him, he is grateful, and that is good for him. If something hard befalls him, he is patient, and that is good for him.",
+      "source": "Sahih Muslim 2999 · narrated by Suhayb",
+      "more": "No moment of a believer's life is wasted. The good days are an invitation to shukr, the hard days are an invitation to sabr, and both are counted.\n\nYou don't have to pretend the hard thing isn't hard. Patience is how you carry it, not denying that it is heavy.",
+      "link": "https://sunnah.com/muslim:2999",
+      "tr": {
+        "text": "Müminin durumu ne hoştur! Her işi onun için hayırdır ve bu, müminden başka kimseye nasip olmaz. Başına bir iyilik gelse şükreder, bu onun için hayır olur. Başına bir sıkıntı gelse sabreder, bu da onun için hayır olur.",
+        "source": "Sahih-i Müslim 2999 · Suheyb rivayet etmiştir",
+        "more": "Bir müminin hayatında boşa giden hiçbir an yoktur. İyi günler şükre, zor günler sabra bir davettir ve ikisi de sayılır.\n\nZor olanın zor olmadığını iddia etmek zorunda değilsin. Sabır, yükü ağır değilmiş gibi yapmak değil, onu taşıma biçimindir."
+      }
+    },
+    {
+      "id": "hadith-muslim-2564",
+      "type": "hadith",
+      "arabic": "إِنَّ اللَّهَ لاَ يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ، وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ",
+      "text": "Allah does not look at your appearance or your wealth. He looks at your hearts and your deeds.",
+      "source": "Sahih Muslim 2564 · narrated by Abu Hurayrah",
+      "more": "So much of what weighs on us is how we look, what we have, and how others see us. None of it is what Allah is looking at.\n\nIn another narration of this hadith, the Prophet ﷺ pointed to his chest as he said it. What is in your heart right now is seen, and it matters.",
+      "link": "https://sunnah.com/muslim:2564",
+      "tr": {
+        "text": "Allah sizin suretlerinize ve mallarınıza bakmaz. O, kalplerinize ve amellerinize bakar.",
+        "source": "Sahih-i Müslim 2564 · Ebu Hüreyre rivayet etmiştir",
+        "more": "Bizi yoran şeylerin çoğu nasıl göründüğümüz, neye sahip olduğumuz ve başkalarının bizi nasıl gördüğüdür. Allah'ın baktığı bunların hiçbiri değildir.\n\nBu hadisin bir başka rivayetinde Peygamber ﷺ bunu söylerken göğsünü işaret etmiştir. Şu an kalbinde olan görülüyor ve önemli."
+      }
+    },
+    {
+      "id": "hadith-muslim-783",
+      "type": "hadith",
+      "arabic": "أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ تَعَالَى أَدْوَمُهَا وَإِنْ قَلَّ",
+      "text": "The most beloved deeds to Allah are the ones done consistently, even if they are small.",
+      "source": "Sahih Muslim 783 · Sahih al-Bukhari 6464 · narrated by ʿAishah",
+      "more": "You don't need a dramatic change to come back to Allah. Two rak'ahs of Duha, one page of Qur'an, one istighfar after each prayer: small, steady and sincere is beloved to Him.\n\nThe narrator adds that whenever ʿAishah started a good deed, she kept it up. Pick one small thing today that you could still be doing a year from now.",
+      "link": "https://sunnah.com/muslim:783",
+      "tr": {
+        "text": "Allah'a en sevimli gelen ameller, az da olsa devamlı yapılanlardır.",
+        "source": "Sahih-i Müslim 783 · Sahih-i Buhari 6464 · Hz. Aişe rivayet etmiştir",
+        "more": "Allah'a dönmek için büyük bir değişime ihtiyacın yok. İki rekât kuşluk namazı, bir sayfa Kur'an, her namazdan sonra bir istiğfar: küçük, düzenli ve samimi olan O'nun katında sevimlidir.\n\nRavi, Hz. Aişe'nin bir iyiliğe başladığında onu sürdürdüğünü ekler. Bugün, bir yıl sonra da yapıyor olabileceğin küçük bir şey seç."
+      }
+    },
+    {
+      "id": "hadith-bukhari-5641",
+      "type": "hadith",
+      "arabic": "مَا يُصِيبُ الْمُسْلِمَ مِنْ نَصَبٍ وَلاَ وَصَبٍ وَلاَ هَمٍّ وَلاَ حُزْنٍ وَلاَ أَذًى وَلاَ غَمٍّ، حَتَّى الشَّوْكَةِ يُشَاكُهَا، إِلاَّ كَفَّرَ اللَّهُ بِهَا مِنْ خَطَايَاهُ",
+      "text": "No exhaustion, illness, worry, sorrow, hurt or distress befalls a Muslim, not even a thorn that pricks him, except that Allah wipes away some of his sins because of it.",
+      "source": "Sahih al-Bukhari 5641 · Sahih Muslim 2573 · narrated by Abu Saʿid al-Khudri and Abu Hurayrah",
+      "more": "Not one moment of your tiredness or sadness goes unseen or wasted. Even the things you never tell anyone about, like the quiet worry before you fall asleep, are being turned into something good for you.",
+      "link": "https://sunnah.com/bukhari:5641",
+      "tr": {
+        "text": "Müslümanın başına gelen hiçbir yorgunluk, hastalık, kaygı, üzüntü, eziyet ve keder yoktur ki, ayağına batan bir diken bile olsa, Allah onun sebebiyle günahlarından bir kısmını silmesin.",
+        "source": "Sahih-i Buhari 5641 · Sahih-i Müslim 2573 · Ebu Said el-Hudri ve Ebu Hüreyre rivayet etmiştir",
+        "more": "Yorgunluğunun ya da hüznünün tek bir anı bile görülmeden ya da boşa gitmez. Kimseye anlatmadığın şeyler bile, mesela uyumadan önceki o sessiz kaygı, senin için hayra dönüşüyor."
+      }
+    },
+    {
+      "id": "hadith-bukhari-7405",
+      "type": "hadith",
+      "arabic": "يَقُولُ اللَّهُ تَعَالَى: أَنَا عِنْدَ ظَنِّ عَبْدِي بِي، وَأَنَا مَعَهُ إِذَا ذَكَرَنِي",
+      "text": "Allah says: “I am as My servant thinks of Me, and I am with him whenever he remembers Me.”",
+      "source": "Sahih al-Bukhari 7405 · Sahih Muslim 2675 · narrated by Abu Hurayrah",
+      "more": "This is a hadith qudsi, words of Allah conveyed by the Prophet ﷺ. It continues: “If he draws near to Me by a hand's span, I draw near to him by an arm's length… and if he comes to Me walking, I come to him running.”\n\nThink well of Allah today. Expect His mercy, His answer and His help.",
+      "link": "https://sunnah.com/bukhari:7405",
+      "tr": {
+        "text": "Allah buyurur: “Ben kulumun beni zannettiği gibiyim. O beni andığında ben onunla beraberim.”",
+        "source": "Sahih-i Buhari 7405 · Sahih-i Müslim 2675 · Ebu Hüreyre rivayet etmiştir",
+        "more": "Bu bir kudsî hadistir; Peygamber'in ﷺ aktardığı Allah'ın sözleri. Devamı şöyledir: “Bana bir karış yaklaşana ben bir arşın yaklaşırım… Bana yürüyerek gelene ben koşarak gelirim.”\n\nBugün Allah hakkında güzel zan besle. O'nun rahmetini, cevabını ve yardımını bekle."
+      }
+    },
+    {
+      "id": "hadith-tirmidhi-2516",
+      "type": "hadith",
+      "arabic": "احْفَظِ اللَّهَ يَحْفَظْكَ، احْفَظِ اللَّهَ تَجِدْهُ تُجَاهَكَ، إِذَا سَأَلْتَ فَاسْأَلِ اللَّهَ، وَإِذَا اسْتَعَنْتَ فَاسْتَعِنْ بِاللَّهِ",
+      "text": "Be mindful of Allah, and He will protect you. Be mindful of Allah, and you will find Him in front of you. When you ask, ask Allah. When you seek help, seek help from Allah.",
+      "source": "Jamiʿ at-Tirmidhi 2516 · narrated by Ibn ʿAbbas · hasan sahih",
+      "more": "The Prophet ﷺ said this to Ibn ʿAbbas when he was still a boy, riding behind him. It continues: if the whole world gathered to benefit you, they could only benefit you with what Allah had already written for you, and if they gathered to harm you, they could only harm you with what Allah had already written. “The pens have been lifted, and the pages have dried.”",
+      "link": "https://sunnah.com/tirmidhi:2516",
+      "tr": {
+        "text": "Allah'ı gözet ki O da seni gözetsin. Allah'ı gözet ki O'nu karşında bulasın. İstediğinde Allah'tan iste. Yardım dilediğinde Allah'tan dile.",
+        "source": "Tirmizi 2516 · İbn Abbas rivayet etmiştir · hasen sahih",
+        "more": "Peygamber ﷺ bunu, henüz bir çocukken bineğin üzerinde arkasında oturan İbn Abbas'a söyledi. Devamında şöyle der: Bütün dünya sana fayda vermek için toplansa, ancak Allah'ın senin için yazdığı kadar fayda verebilir; sana zarar vermek için toplansa, ancak Allah'ın yazdığı kadar zarar verebilir. “Kalemler kaldırıldı, sayfalar kurudu.”"
+      }
+    },
+    {
+      "id": "hadith-bukhari-6114",
+      "type": "hadith",
+      "arabic": "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ",
+      "text": "The strong one is not the one who overpowers others in wrestling. The strong one is the one who controls himself when he is angry.",
+      "source": "Sahih al-Bukhari 6114 · narrated by Abu Hurayrah",
+      "more": "Real strength is quiet. When the Prophet ﷺ saw a man red-faced with anger, he said that if he would only say “I seek refuge in Allah from Shaytan”, it would leave him (Sahih al-Bukhari 6115). He also said that whoever gets angry while standing should sit down (Sunan Abi Dawud 4782).\n\nNext time you feel it rising, try saying “aʿudhu billahi min ash-shaytan ir-rajim” before anything else.",
+      "link": "https://sunnah.com/bukhari:6114",
+      "tr": {
+        "text": "Güçlü kişi güreşte insanları yenen değildir. Güçlü kişi, öfkelendiğinde kendine hâkim olandır.",
+        "source": "Sahih-i Buhari 6114 · Ebu Hüreyre rivayet etmiştir",
+        "more": "Gerçek güç sessizdir. Peygamber ﷺ öfkeden yüzü kızarmış bir adam gördüğünde, “Şeytandan Allah'a sığınırım” dese öfkesinin gideceğini söyledi (Sahih-i Buhari 6115). Ayaktayken öfkelenen kişinin oturmasını da tavsiye etti (Sünen-i Ebu Davud 4782).\n\nBir dahaki sefere öfkenin yükseldiğini hissettiğinde, her şeyden önce “Eûzü billâhi mineş-şeytânir-racîm” demeyi dene."
+      }
+    },
+    {
+      "id": "hadith-muslim-2699",
+      "type": "hadith",
+      "arabic": "مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا، نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ",
+      "text": "Whoever relieves a believer of one of the hardships of this world, Allah will relieve him of one of the hardships of the Day of Resurrection.",
+      "source": "Sahih Muslim 2699 · narrated by Abu Hurayrah",
+      "more": "Sometimes the way out of your own heaviness is to lighten someone else's. The same hadith says: “Allah helps His servant as long as the servant is helping his brother.”\n\nWho could you check on today?",
+      "link": "https://sunnah.com/muslim:2699",
+      "tr": {
+        "text": "Kim bir müminin dünya sıkıntılarından birini giderirse, Allah da onun kıyamet günü sıkıntılarından birini giderir.",
+        "source": "Sahih-i Müslim 2699 · Ebu Hüreyre rivayet etmiştir",
+        "more": "Bazen kendi ağırlığından çıkmanın yolu, başkasınınkini hafifletmektir. Aynı hadiste şöyle buyrulur: “Kul kardeşinin yardımında olduğu sürece Allah da kulun yardımındadır.”\n\nBugün kimin hâlini sorabilirsin?"
+      }
+    },
+    {
+      "id": "sunnah-sleep",
+      "type": "sunnah",
+      "arabic": "إِذَا أَتَيْتَ مَضْجَعَكَ فَتَوَضَّأْ وُضُوءَكَ لِلصَّلاَةِ، ثُمَّ اضْطَجِعْ عَلَى شِقِّكَ الأَيْمَنِ",
+      "text": "When you go to bed, make wudu as you would for prayer, then lie down on your right side.",
+      "source": "Sahih al-Bukhari 247 · Sahih Muslim 2710 · narrated by al-Baraʾ ibn ʿAzib",
+      "more": "The Prophet ﷺ then taught a du'a to be the last words you say before sleep:\n\n“O Allah, I submit myself to You, I hand my affairs over to You, and I lean my back on You, in hope of You and in awe of You. There is no refuge and no escape from You except to You. I believe in Your Book that You revealed, and in Your Prophet whom You sent.”\n\nHe said that whoever dies that night dies upon the fitrah.",
+      "link": "https://sunnah.com/bukhari:247",
+      "tr": {
+        "text": "Yatağına gideceğin zaman namaz abdesti gibi abdest al, sonra sağ tarafına yat.",
+        "source": "Sahih-i Buhari 247 · Sahih-i Müslim 2710 · Bera b. Azib rivayet etmiştir",
+        "more": "Peygamber ﷺ ardından, uyumadan önce söylenecek son sözler olarak bir dua öğretti:\n\n“Allah'ım, kendimi sana teslim ettim, işimi sana havale ettim, sırtımı sana dayadım; sana rağbet ederek ve senden korkarak. Senden kaçıp sığınılacak bir yer yok, ancak sana. İndirdiğin Kitabına ve gönderdiğin Peygamberine iman ettim.”\n\nO gece ölen kişinin fıtrat üzere öleceğini söyledi."
+      }
+    },
+    {
+      "id": "sunnah-smile",
+      "type": "sunnah",
+      "arabic": "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَةٌ",
+      "text": "Your smile in the face of your brother is charity.",
+      "source": "Jamiʿ at-Tirmidhi 1956 · narrated by Abu Dharr",
+      "more": "The hadith goes on to count other small charities: guiding someone who is lost, helping someone who can't see well, moving a stone or thorn out of the road, pouring water from your bucket into your brother's.\n\nCharity is not only money. Today, it might just be your face.",
+      "link": "https://sunnah.com/tirmidhi:1956",
+      "tr": {
+        "text": "Kardeşinin yüzüne gülümsemen sadakadır.",
+        "source": "Tirmizi 1956 · Ebu Zer rivayet etmiştir",
+        "more": "Hadis başka küçük sadakaları da sayar: yolunu kaybetmiş birine yol göstermek, iyi göremeyen birine yardım etmek, yoldan taşı ya da dikeni kaldırmak, kendi kovandan kardeşinin kovasına su dökmek.\n\nSadaka sadece para değildir. Bugün belki sadece yüzündür."
+      }
+    },
+    {
+      "id": "sunnah-salam",
+      "type": "sunnah",
+      "arabic": "أَوَلاَ أَدُلُّكُمْ عَلَى شَىْءٍ إِذَا فَعَلْتُمُوهُ تَحَابَبْتُمْ؟ أَفْشُوا السَّلاَمَ بَيْنَكُمْ",
+      "text": "Shall I not tell you of something that, if you do it, you will love one another? Spread the greeting of salam among yourselves.",
+      "source": "Sahih Muslim 54 · narrated by Abu Hurayrah",
+      "more": "The hadith begins: “You will not enter Paradise until you believe, and you will not believe until you love one another.”\n\nLove between hearts starts with something as small as “as-salamu ʿalaykum”. The Prophet ﷺ also encouraged giving salam to those you know and those you don't (Sahih al-Bukhari 12).",
+      "link": "https://sunnah.com/muslim:54",
+      "tr": {
+        "text": "Size, yaptığınızda birbirinizi seveceğiniz bir şeyi haber vereyim mi? Aranızda selamı yayın.",
+        "source": "Sahih-i Müslim 54 · Ebu Hüreyre rivayet etmiştir",
+        "more": "Hadis şöyle başlar: “İman etmedikçe cennete giremezsiniz, birbirinizi sevmedikçe de iman etmiş olmazsınız.”\n\nKalpler arasındaki sevgi, “Esselâmu aleyküm” kadar küçük bir şeyle başlar. Peygamber ﷺ tanıdığına da tanımadığına da selam vermeyi tavsiye etmiştir (Sahih-i Buhari 12)."
+      }
+    },
+    {
+      "id": "sunnah-eating",
+      "type": "sunnah",
+      "arabic": "يَا غُلاَمُ، سَمِّ اللَّهَ، وَكُلْ بِيَمِينِكَ، وَكُلْ مِمَّا يَلِيكَ",
+      "text": "Young man, say Bismillah, eat with your right hand, and eat from what is in front of you.",
+      "source": "Sahih al-Bukhari 5376 · Sahih Muslim 2022 · narrated by ʿUmar ibn Abi Salamah",
+      "more": "ʿUmar ibn Abi Salamah was a boy growing up in the Prophet's ﷺ home, and his hand used to wander all over the dish. The Prophet ﷺ corrected him gently, in three short sentences.\n\nʿUmar said: “That remained my way of eating ever after.” Gentle words can last a lifetime.",
+      "link": "https://sunnah.com/bukhari:5376",
+      "tr": {
+        "text": "Evlat, besmele çek, sağ elinle ye ve önünden ye.",
+        "source": "Sahih-i Buhari 5376 · Sahih-i Müslim 2022 · Ömer b. Ebi Seleme rivayet etmiştir",
+        "more": "Ömer b. Ebi Seleme, Peygamber'in ﷺ evinde büyüyen bir çocuktu ve eli kabın her yerinde dolaşırdı. Peygamber ﷺ onu üç kısa cümleyle, nazikçe düzeltti.\n\nÖmer şöyle dedi: “O günden sonra hep böyle yedim.” Nazik sözler bir ömür boyu sürebilir."
+      }
+    },
+    {
+      "id": "sunnah-tasbih",
+      "type": "sunnah",
+      "arabic": "مَنْ قَالَ سُبْحَانَ اللَّهِ وَبِحَمْدِهِ فِي يَوْمٍ مِائَةَ مَرَّةٍ، حُطَّتْ خَطَايَاهُ وَإِنْ كَانَتْ مِثْلَ زَبَدِ الْبَحْرِ",
+      "text": "Whoever says “SubhanAllahi wa bihamdihi” a hundred times in a day, his sins are wiped away, even if they were like the foam of the sea.",
+      "source": "Sahih al-Bukhari 6405 · Sahih Muslim 2691 · narrated by Abu Hurayrah",
+      "more": "It takes about two minutes. You can do it on a walk, in traffic, or while the kettle boils.\n\nCount on your fingers: the Prophet ﷺ told the women of the companions to count their tasbih on their fingertips, because the fingers will be asked and made to speak (Sunan Abi Dawud 1501).",
+      "link": "https://sunnah.com/bukhari:6405",
+      "tr": {
+        "text": "Kim günde yüz defa “Sübhanallahi ve bihamdihi” derse, günahları deniz köpüğü kadar olsa bile silinir.",
+        "source": "Sahih-i Buhari 6405 · Sahih-i Müslim 2691 · Ebu Hüreyre rivayet etmiştir",
+        "more": "Yaklaşık iki dakika sürer. Yürürken, trafikte ya da çay demlenirken yapabilirsin.\n\nParmaklarınla say: Peygamber ﷺ sahabe hanımlarına tesbihlerini parmak uçlarıyla saymalarını söyledi, çünkü parmaklar sorguya çekilecek ve konuşturulacaktır (Sünen-i Ebu Davud 1501)."
+      }
+    },
+    {
+      "id": "sunnah-yunus",
+      "type": "sunnah",
+      "arabic": "لاَ إِلَهَ إِلاَّ أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ",
+      "text": "There is no god but You. Glory be to You. I have been among the wrongdoers.",
+      "source": "Jamiʿ at-Tirmidhi 3505 · the du'a of Yunus, Qur'an 21:87",
+      "more": "This is the du'a Prophet Yunus called out with in the darkness, inside the belly of the whale. The Prophet ﷺ said: “No Muslim ever calls on Allah with it for anything, except that Allah answers him.”\n\nWhen everything feels dark and closed, this is a door.",
+      "link": "https://sunnah.com/tirmidhi:3505",
+      "tr": {
+        "text": "Senden başka ilah yoktur. Seni tenzih ederim. Ben gerçekten zalimlerden oldum.",
+        "source": "Tirmizi 3505 · Hz. Yunus'un duası, Kur'an 21:87",
+        "more": "Bu, Hz. Yunus'un balığın karnında, karanlıklar içinde ettiği duadır. Peygamber ﷺ şöyle buyurdu: “Hangi Müslüman herhangi bir şey için bu duayla Allah'a yalvarırsa, Allah mutlaka ona icabet eder.”\n\nHer şey karanlık ve kapalı göründüğünde, bu bir kapıdır."
+      }
+    },
+    {
+      "id": "sunnah-worry",
+      "type": "sunnah",
+      "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْجُبْنِ وَالْبُخْلِ، وَضَلَعِ الدَّيْنِ، وَغَلَبَةِ الرِّجَالِ",
+      "text": "O Allah, I seek refuge in You from worry and grief, from helplessness and laziness, from cowardice and stinginess, from the weight of debt, and from being overpowered by others.",
+      "source": "Sahih al-Bukhari 6369 · narrated by Anas ibn Malik",
+      "more": "Anas narrated that the Prophet ﷺ used to say this du'a. Notice what comes first: worry (hamm, about what is coming) and grief (hazan, about what has passed).\n\nEven the Prophet ﷺ asked for protection from them. Feeling them is human. Turning to Allah with them is sunnah.",
+      "link": "https://sunnah.com/bukhari:6369",
+      "tr": {
+        "text": "Allah'ım! Kaygıdan ve hüzünden, acizlikten ve tembellikten, korkaklıktan ve cimrilikten, borcun ağırlığından ve insanların baskısından sana sığınırım.",
+        "source": "Sahih-i Buhari 6369 · Enes b. Malik rivayet etmiştir",
+        "more": "Enes, Peygamber'in ﷺ bu duayı okuduğunu rivayet etmiştir. İlk gelenlere dikkat et: kaygı (hemm, gelecek olana dair) ve hüzün (hazen, geçmiş olana dair).\n\nPeygamber ﷺ bile bunlardan korunmak istedi. Onları hissetmek insanidir. Onlarla Allah'a yönelmek sünnettir."
+      }
+    },
+    {
+      "id": "chapter-madarij",
+      "type": "chapter",
+      "arabic": "فِي الْقَلْبِ شَعَثٌ لَا يَلُمُّهُ إِلَّا الْإِقْبَالُ عَلَى اللَّهِ، وَفِيهِ وَحْشَةٌ لَا يُزِيلُهَا إِلَّا الْأُنْسُ بِهِ فِي خَلْوَتِهِ، وَفِيهِ حُزْنٌ لَا يُذْهِبُهُ إِلَّا السُّرُورُ بِمَعْرِفَتِهِ وَصِدْقِ مُعَامَلَتِهِ",
+      "text": "In the heart there is a scattering that nothing gathers except turning to Allah. In it there is a loneliness that nothing removes except closeness to Him in private. In it there is a sadness that nothing lifts except the joy of knowing Him and being true with Him…",
+      "source": "Ibn al-Qayyim · Madarij as-Salikin",
+      "more": "Ibn al-Qayyim (d. 751 AH) was the foremost student of Ibn Taymiyyah, and Madarij as-Salikin (“The Stations of the Seekers”) is his great work on the heart's journey to Allah.\n\nThe passage goes on to name the anxiety, the regret and the deep need in every heart, a need that would not be filled even if the whole world were given to it. Only Allah fills it.\n\nThe emptiness you feel is not a flaw in you. It is a heart made for Him, asking for Him.",
+      "tr": {
+        "text": "Kalpte bir dağınıklık vardır; onu ancak Allah'a yönelmek toplar. Kalpte bir yalnızlık vardır; onu ancak yalnızken O'na yakınlık giderir. Kalpte bir hüzün vardır; onu ancak O'nu tanımanın sevinci ve O'na karşı dürüst olmak giderir…",
+        "source": "İbnü'l-Kayyim · Medâricü's-Sâlikîn",
+        "more": "İbnü'l-Kayyim (ö. 751 h.), İbn Teymiyye'nin en önde gelen talebesiydi. Medâricü's-Sâlikîn (“Yolcuların Menzilleri”), kalbin Allah'a yolculuğu üzerine yazdığı büyük eseridir.\n\nPasaj, her kalpteki kaygıyı, pişmanlığı ve derin ihtiyacı saymaya devam eder; bütün dünya verilse bile dolmayacak bir ihtiyaç. Onu yalnızca Allah doldurur.\n\nHissettiğin boşluk senin bir kusurun değil. O, O'nun için yaratılmış ve O'nu arayan bir kalp."
+      }
+    },
+    {
+      "id": "chapter-wabil",
+      "type": "chapter",
+      "arabic": "مَا يَصْنَعُ أَعْدَائِي بِي؟ أَنَا جَنَّتِي وَبُسْتَانِي فِي صَدْرِي، أَيْنَ رُحْتُ فَهِيَ مَعِي لَا تُفَارِقُنِي. أَنَا حَبْسِي خَلْوَةٌ، وَقَتْلِي شَهَادَةٌ، وَإِخْرَاجِي مِنْ بَلَدِي سِيَاحَةٌ",
+      "text": "What can my enemies do to me? My paradise and my garden are in my chest. Wherever I go, they are with me and never leave me. My imprisonment is time alone with my Lord, my killing would be martyrdom, and my exile would be a journey.",
+      "source": "Ibn Taymiyyah, recorded by Ibn al-Qayyim · al-Wabil as-Sayyib",
+      "more": "Ibn al-Qayyim recorded these words of his teacher in al-Wabil as-Sayyib, his book on the remembrance of Allah. He wrote that whenever fear and worry overwhelmed them and the earth felt narrow, they would go to Ibn Taymiyyah, and as soon as they saw him and heard him speak, it would all lift and turn into ease, strength and certainty.\n\nIbn Taymiyyah would later die in prison in Damascus. Circumstances can take a great deal from you. They cannot reach what Allah has placed in your heart.",
+      "tr": {
+        "text": "Düşmanlarım bana ne yapabilir? Cennetim ve bahçem göğsümdedir. Nereye gitsem benimledir, benden ayrılmaz. Hapsedilmem Rabbimle baş başa kalmaktır, öldürülmem şehitliktir, sürgün edilmem ise bir yolculuktur.",
+        "source": "İbn Teymiyye, İbnü'l-Kayyim'in aktarımıyla · el-Vâbilü's-Sayyib",
+        "more": "İbnü'l-Kayyim, hocasının bu sözlerini Allah'ı zikir üzerine yazdığı el-Vâbilü's-Sayyib'de kaydetmiştir. Korku ve kaygı onları sardığında ve dünya dar geldiğinde İbn Teymiyye'ye gittiklerini; onu görüp konuşmasını duyar duymaz hepsinin kalkıp yerini ferahlığa, güce ve yakine bıraktığını yazar.\n\nİbn Teymiyye daha sonra Şam'da hapiste vefat etti. Şartlar senden çok şey alabilir. Ama Allah'ın kalbine koyduğuna ulaşamazlar."
+      }
+    },
+    {
+      "id": "chapter-fawaid",
+      "type": "chapter",
+      "arabic": "إِذَا أَصْبَحَ الْعَبْدُ وَأَمْسَى وَلَيْسَ هَمُّهُ إِلَّا اللَّهَ وَحْدَهُ، تَحَمَّلَ اللَّهُ سُبْحَانَهُ حَوَائِجَهُ كُلَّهَا، وَحَمَلَ عَنْهُ كُلَّ مَا أَهَمَّهُ، وَفَرَّغَ قَلْبَهُ لِمَحَبَّتِهِ، وَلِسَانَهُ لِذِكْرِهِ، وَجَوَارِحَهُ لِطَاعَتِهِ",
+      "text": "When a servant wakes in the morning and reaches the evening with no concern but Allah alone, Allah takes on all of his needs and carries everything that worries him. He frees his heart for His love, his tongue for His remembrance, and his limbs for His obedience.",
+      "source": "Ibn al-Qayyim · al-Fawa'id",
+      "more": "al-Fawa'id (“Benefits”) is a collection of Ibn al-Qayyim's short reflections, gathered like notes in a journal.\n\nThe passage continues with the opposite: whoever wakes and sleeps with the world as his only concern, Allah leaves him to carry its worries and griefs by himself.\n\nTomorrow, before you check your phone, try making your first concern Allah, even if it is only a minute of morning adhkar.",
+      "tr": {
+        "text": "Kul sabaha çıkıp akşama erdiğinde Allah'tan başka bir derdi olmazsa, Allah onun bütün ihtiyaçlarını üstlenir ve onu kaygılandıran her şeyi ondan alır. Kalbini sevgisine, dilini zikrine, azalarını ise itaatine ayırır.",
+        "source": "İbnü'l-Kayyim · el-Fevâid",
+        "more": "el-Fevâid (“Faydalar”), İbnü'l-Kayyim'in bir defterdeki notlar gibi toplanmış kısa tefekkürlerinden oluşur.\n\nPasaj tersiyle devam eder: Sabahlayıp akşamlayan ve tek derdi dünya olan kişiyi Allah, dünyanın kaygı ve kederlerini tek başına taşımaya bırakır.\n\nYarın telefonuna bakmadan önce ilk derdini Allah yapmayı dene; sadece bir dakikalık sabah zikri bile olsa."
+      }
+    }
+  ]
+}
