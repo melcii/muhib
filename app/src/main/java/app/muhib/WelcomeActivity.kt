@@ -17,6 +17,8 @@ import android.view.ViewGroup
 import android.view.WindowInsets
 import android.widget.ImageView
 import android.widget.TextView
+import android.window.OnBackInvokedCallback
+import android.window.OnBackInvokedDispatcher
 
 /**
  * First run: greet, show what the widget does, help put it on the home screen.
@@ -97,7 +99,10 @@ class WelcomeActivity : Activity() {
         outState.putInt(KEY_STEP, step)
     }
 
-    @Deprecated("Still the simplest back handling on API 26+")
+    // Android 13+ (and always on 16+) routes back through this callback; older versions use onBackPressed.
+    private val backToHello by lazy { OnBackInvokedCallback { show(HELLO) } }
+
+    @Deprecated("Only reached below Android 13")
     override fun onBackPressed() {
         if (step == HELLO) super.onBackPressed() else show(HELLO)
     }
@@ -108,6 +113,12 @@ class WelcomeActivity : Activity() {
 
     private fun show(next: Int) {
         step = next
+        if (Build.VERSION.SDK_INT >= 33) {
+            onBackInvokedDispatcher.unregisterOnBackInvokedCallback(backToHello)
+            if (next != HELLO) {
+                onBackInvokedDispatcher.registerOnBackInvokedCallback(OnBackInvokedDispatcher.PRIORITY_DEFAULT, backToHello)
+            }
+        }
         steps.forEachIndexed { i, view -> view.visibility = if (i == next) View.VISIBLE else View.GONE }
         findViewById<View>(R.id.langToggle).visibility = if (next == HELLO) View.VISIBLE else View.GONE
         findViewById<View>(R.id.scroll).scrollTo(0, 0)
