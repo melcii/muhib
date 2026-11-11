@@ -254,6 +254,8 @@ class MainActivity : Activity(), SensorEventListener {
         if (m.day!!.online) find<TextView>(R.id.footer).append(" · " + getString(R.string.source_online))
         renderSimple(m)
         renderCompact(schedule, m.now)
+        find<TextView>(R.id.compactLeft).text =
+            getString(R.string.widget_left, Fmt.prayer(this, m.next), Fmt.left(this, m.nextAt - m.now))
         renderQibla(place)
     }
 
@@ -360,10 +362,9 @@ class MainActivity : Activity(), SensorEventListener {
         chart.picked = pick
         pick?.let { showPick(it) }
 
-        // The times themselves: the six, then the extra ones of the day, then the night.
+        // The six times on the Compact page; the extra ones of the day and the night under the timeline.
         fun f(x: Double) = d.maghrib + ((next.imsak - d.maghrib) * x).toLong()
-        val rows = listOf(
-            (0..5).map { names[it] to d.t[it] },
+        val extras = listOf(
             listOf(getString(R.string.ishraq) to ishraq, getString(R.string.duha) to duha, getString(R.string.evvabin) to d.maghrib),
             listOf(getString(R.string.night_third_1) to f(1 / 3.0), getString(R.string.midnight_short) to f(0.5),
                 getString(R.string.night_third_2) to f(2 / 3.0), getString(R.string.seher) to f(5 / 6.0)),
@@ -372,7 +373,10 @@ class MainActivity : Activity(), SensorEventListener {
         val inNow = d.t[if (date == today.today) today.current else Day.ISHA]
         val group = find<LinearLayout>(R.id.compactTimes)
         group.removeAllViews()
-        rows.forEachIndexed { r, cells -> cellRow(group, cells, zone, now, if (r == 0) inNow else null) }
+        cellRow(group, (0..5).map { names[it] to d.t[it] }, zone, now, inNow)
+        val more = find<LinearLayout>(R.id.timelineTimes)
+        more.removeAllViews()
+        extras.forEach { cellRow(more, it, zone, now, null) }
 
         find<TextView>(R.id.compactLegend).text = SpannableStringBuilder().apply {
             fun dot(color: Int) {

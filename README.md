@@ -6,8 +6,8 @@ A quiet Islamic companion for Android: prayer times, the Qibla and a Hijri calen
 - **Your place at the top.** Tap its name to open a sheet: switch between where you are and your cities, add a city from the built-in list, or swipe one aside to remove it.
 - **A prayer card you swipe through:**
   - **Simple:** the next time and how long until it.
-  - **Compact** (the default): the six times, Ishrâq, Duha and Evvabin, and the night in thirds and halves with Seher. The time you are in is highlighted.
-  - **Timeline:** the whole day on one line, with the times to avoid prayer, the night rows and a line for now. Tap any part to see its times.
+  - **Compact** (the default): the six times and the time left until the next. The time you are in is highlighted.
+  - **Timeline:** the whole day on one line, with the times to avoid prayer, the night rows and a line for now. Tap any part to see its times. Under it are Ishrâq, Duha and Evvabin, and the night in thirds and halves with Seher.
   - **Qibla:** a compass that turns with your phone. It also shows the distance to the Kaaba, the state of your location, and a figure-8 to calibrate the compass.
 - **The reminder below it**, blurred until you tap it. It then opens up to the full passage, with "a little more" and its source.
 - **Calendar:** the button at the top opens any day's times. Each day shows its Hijri date, plus Ishrâq, Duha and the night. Swipe the month sideways to move between months.
