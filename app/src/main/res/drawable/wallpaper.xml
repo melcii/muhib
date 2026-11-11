@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A stand-in home screen behind the widget preview, so see-through styles show. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:angle="315"
+        android:centerColor="#C9A27B"
+        android:endColor="#2E4A5C"
+        android:startColor="#E8D5B5" />
+    <corners android:radius="24dp" />
+</shape>

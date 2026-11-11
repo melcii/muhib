@@ -11,4 +11,8 @@
     <color name="glow">#382F6B55</color>
     <color name="icon_bg">#2F6B55</color>
     <color name="icon_fg">#F6F5F1</color>
+
+    <color name="forbidden">#E8B4A6</color>
+    <color name="forbidden_ink">#A4513D</color>
+    <color name="night">#DCE3EE</color>
 </resources>

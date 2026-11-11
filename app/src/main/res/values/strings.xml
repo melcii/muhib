@@ -18,13 +18,13 @@
     <string name="notification_channel">Quiet reminders</string>
     <string name="notification_title">Something is waiting for you.</string>
     <string name="welcome_greeting">As-salamu ʿalaykum</string>
-    <string name="welcome_body">Muhib is a quiet companion on your home screen. An ayah, a hadith or a sunnah waits there, covered, until the moment you need it.</string>
+    <string name="welcome_body">Muhib is a quiet companion. Prayer times for where you are, and on your home screen an ayah, a hadith or a sunnah that waits, covered, until the moment you need it.</string>
     <string name="welcome_continue">Continue</string>
     <string name="welcome_widget_title">Keep it close</string>
-    <string name="welcome_widget_body">This is your Muhib widget. Tap it once to reveal what came for you, and tap again to read more. It covers itself again every morning and night.</string>
-    <string name="welcome_add">Add to home screen</string>
+    <string name="welcome_widget_body">Tap the reminder once to reveal what came for you, and again to read more. It covers itself again after Fajr and after Maghrib. Prayer times can sit beside it, or in a widget of their own.</string>
+    <string name="welcome_add">Choose a widget</string>
     <string name="welcome_manual_title">Or add it yourself</string>
-    <string name="welcome_manual_steps">1. Touch and hold an empty spot on your home screen.\n2. Tap Widgets.\n3. Find Muhib, then drag it onto your home screen.</string>
+    <string name="welcome_manual_steps">1. Touch and hold an empty spot on your home screen.\n2. Tap Widgets.\n3. Find Muhib, then drag a widget onto your home screen.</string>
     <string name="welcome_later">Later</string>
     <string name="welcome_done_title">It’s waiting for you</string>
     <string name="welcome_done_body">Tap it when you need it the most.</string>
@@ -42,4 +42,223 @@
     <string name="settings">Settings</string>
     <string name="back">Back</string>
     <string name="notifications_label">Notifications</string>
+
+    <!-- Prayer times -->
+    <string-array name="prayers">
+        <item>Imsak</item>
+        <item>Sunrise</item>
+        <item>Dhuhr</item>
+        <item>Asr</item>
+        <item>Maghrib</item>
+        <item>Isha</item>
+    </string-array>
+    <string-array name="prayers_short">
+        <item>Imsak</item>
+        <item>Sunrise</item>
+        <item>Dhuhr</item>
+        <item>Asr</item>
+        <item>Maghrib</item>
+        <item>Isha</item>
+    </string-array>
+    <string-array name="hijri_months">
+        <item>Muharram</item>
+        <item>Safar</item>
+        <item>Rabi al-Awwal</item>
+        <item>Rabi al-Thani</item>
+        <item>Jumada al-Ula</item>
+        <item>Jumada al-Akhirah</item>
+        <item>Rajab</item>
+        <item>Shaban</item>
+        <item>Ramadan</item>
+        <item>Shawwal</item>
+        <item>Dhu al-Qadah</item>
+        <item>Dhu al-Hijjah</item>
+    </string-array>
+    <string name="left_hm">%1$dh %2$dm</string>
+    <string name="left_m">%d min</string>
+    <string name="widget_left">%1$s in %2$s</string>
+    <string name="next_in">%s in</string>
+    <string name="at_time">at %s</string>
+    <string name="since">%1$s began at %2$s</string>
+    <string name="hijri_from_maghrib">%s · began at Maghrib</string>
+    <string name="current_location">Current location</string>
+    <string name="places">Places</string>
+    <string name="add_city">Add a city</string>
+    <string name="search_hint">Search for a city</string>
+    <string name="no_results">No cities found</string>
+    <string name="remove">Remove</string>
+    <string name="local_time">Local time %s</string>
+    <string name="tab_simple">Simple</string>
+    <string name="tab_detailed">Detailed</string>
+    <string name="tab_qibla">Qibla</string>
+    <string name="prayer_times">Prayer times</string>
+    <string name="forbidden">Times to avoid prayer</string>
+    <string name="forbidden_sunrise">As the sun rises</string>
+    <string name="forbidden_zenith">Sun at its zenith</string>
+    <string name="forbidden_sunset">As the sun sets</string>
+    <string name="forbidden_note">Voluntary prayers are not offered at these times. The edges are approximate.</string>
+    <string name="now">Now</string>
+    <string name="prayer_night">The night</string>
+    <string name="night_first">First third of the night</string>
+    <string name="night_second_a">Second third, before midnight</string>
+    <string name="night_second_b">Second third, after midnight</string>
+    <string name="night_last">Last third of the night</string>
+    <string name="night_passed">%d%% of the night has passed</string>
+    <string name="night_day">Tonight, from Maghrib to Fajr</string>
+    <string name="night_range">%1$s – %2$s</string>
+    <string name="first_third_ends">First third ends</string>
+    <string name="midnight">Middle of the night</string>
+    <string name="last_third">Last third begins</string>
+    <string name="qibla_from_north">from North · %s km to the Kaaba</string>
+    <string name="qibla_hint">Hold your phone flat and turn until the Kaaba sits at the top.</string>
+    <string name="qibla_facing">You are facing the Qibla</string>
+    <string name="qibla_no_compass">This phone has no compass. Use the angle from North.</string>
+    <string name="qibla_other_place">The Qibla from %s</string>
+    <string name="location_title">Where are you?</string>
+    <string name="location_body">Muhib uses your location to find prayer times and the Qibla. It checks only when you open the app or tap the city on the widget, and your location never leaves your phone.</string>
+    <string name="allow_location">Allow location</string>
+    <string name="choose_city">Choose a city instead</string>
+    <string name="locating">Locating…</string>
+    <string name="try_again">Try again</string>
+    <string name="menu">Places</string>
+    <string name="method">Calculation method</string>
+    <string name="method_mwl">Muslim World League</string>
+    <string name="method_diyanet">Diyanet, Türkiye</string>
+    <string name="method_isna">ISNA, North America</string>
+    <string name="method_egypt">Egyptian General Authority</string>
+    <string name="method_makkah">Umm al-Qura, Makkah</string>
+    <string name="method_karachi">University of Karachi</string>
+    <string name="asr">Asr</string>
+    <string name="asr_standard">Standard</string>
+    <string name="asr_hanafi">Hanafi</string>
+    <string name="asr_note">Hanafi begins Asr later, when a shadow is twice an object’s length.</string>
+    <string name="footer">%1$s · Asr %2$s</string>
+    <string name="widget">Widget</string>
+    <string name="widget_style">Widget style</string>
+    <string name="prayer_widget_desc">Today’s prayer times and the time left until the next one.</string>
+    <string name="widget_no_place">Tap to set location</string>
+    <string name="background">Background</string>
+    <string name="opacity">Opacity</string>
+    <string name="opacity_value">%d%%</string>
+    <string name="text_color">Text</string>
+    <string name="text_auto">Auto</string>
+    <string name="text_light">Light</string>
+    <string name="text_dark">Dark</string>
+    <string name="done">Done</string>
+    <string name="widget_hint">Tap the city on the widget to update your location. Tap anywhere else to open Muhib.</string>
+    <string name="tab_calendar">Calendar</string>
+    <string name="prev_month">Previous month</string>
+    <string name="next_month">Next month</string>
+    <string name="exact_title">Exact countdown</string>
+    <string name="exact_sub">Updates the widget right on the minute</string>
+    <string name="exact_on">On</string>
+    <string name="exact_off">Allow</string>
+    <string name="exact_ask">Make the countdown exact to the minute</string>
+    <string name="loc_good">Location within %1$s · %2$s</string>
+    <string name="loc_old">Your location was found %s. If you’ve moved, update it.</string>
+    <string name="loc_rough">Your location is rough (within %s). The direction is still close, but a GPS fix is better.</string>
+    <string name="loc_weak">Couldn’t get a GPS fix; the signal may be weak. Using your last location (%s). Try near a window or outside.</string>
+    <string name="loc_off">Location is off on this phone. Using your last location (%s).</string>
+    <string name="loc_turn_on">Turn on location</string>
+    <string name="loc_denied">Location isn’t allowed, so the Qibla uses a saved place.</string>
+    <string name="loc_finding">Finding your location…</string>
+    <string name="loc_update">Update location</string>
+    <string name="calib_title">Calibrate the compass</string>
+    <string name="calib_needed">The compass needs calibrating</string>
+    <string name="calib_done">Compass calibrated</string>
+    <string name="calib_body">Move your phone in a figure-8 a few times, away from metal and magnets.</string>
+    <string name="calib_link">Compass looks off? Calibrate</string>
+    <string name="calib_hide">Hide calibration</string>
+    <string name="just_now">just now</string>
+    <string name="minutes_ago">%d min ago</string>
+    <string name="hours_ago">%d h ago</string>
+    <string name="days_ago">%d days ago</string>
+    <string name="metres">%d m</string>
+    <string name="kilometres">%s km</string>
+    <string name="tab_compact">Compact</string>
+    <string name="fajr">Fajr</string>
+    <string name="ishraq">Ishrâq</string>
+    <string name="duha">Duha</string>
+    <string name="evvabin">Evvabin</string>
+    <string name="seher">Seher</string>
+    <string name="night_short">Night</string>
+    <string name="night_third_1">Night 1/3</string>
+    <string name="midnight_short">Midnight</string>
+    <string name="night_third_2">Night 2/3</string>
+    <string name="night_second">Second third of the night</string>
+    <string name="night_half_first">First half of the night</string>
+    <string name="night_half_second">Second half of the night</string>
+    <string name="seher_name">Seher, the last sixth of the night</string>
+    <string name="forbidden_short">Forbidden time</string>
+    <string name="compact_in">in %s</string>
+    <string name="compact_left">%s left</string>
+    <string name="compact_past">Passed</string>
+    <string name="compact_hint">Tap any part of the chart to see its times.</string>
+    <string name="update_section">Prayer times</string>
+    <string name="update_title">Update prayer times</string>
+    <string name="update_never">Downloads the next 2 months from AlAdhan</string>
+    <string name="update_done">Updated %1$s · until %2$s</string>
+    <string name="update_action">Update</string>
+    <string name="update_running">Updating…</string>
+    <string name="update_failed">Couldn’t reach AlAdhan. Check your connection and try again.</string>
+    <string name="update_none">Add a city or allow location first.</string>
+    <string name="update_note">Only when you tap Update, Muhib sends each saved place’s rough coordinates (to about 1 km), with your method and Asr choice, to api.aladhan.com. Nothing else is sent. If you change the method or move, tap Update again; until then, times are calculated on the phone.</string>
+    <string name="source_online">AlAdhan</string>
+    <string name="notify_section">Notifications</string>
+    <string name="notify_title">Prayer notifications</string>
+    <string name="notify_sub">A short note before each time and when it comes</string>
+    <string name="notify_blocked">Notifications are blocked. Tap to allow them.</string>
+    <string name="notify_before">Before the time</string>
+    <string name="notify_minutes">%d min</string>
+    <string name="notify_off">Off</string>
+    <string name="notify_at">At the time</string>
+    <string name="notify_which">Which times</string>
+    <string name="notify_none">None</string>
+    <string name="notif_channel">Prayer times</string>
+    <string name="notif_at">%s time</string>
+    <string name="ok">OK</string>
+    <string name="accent_section">Color</string>
+    <string name="accent_note">Used across the app and on every widget.</string>
+    <string name="accent_green">Green</string>
+    <string name="accent_blue">Blue</string>
+    <string name="accent_plum">Plum</string>
+    <string name="accent_amber">Amber</string>
+    <string name="accent_custom">Custom</string>
+    <string name="accent_pick">Pick a color</string>
+    <string name="background_pick">Background color</string>
+    <string name="color_hue">Hue</string>
+    <string name="color_saturation">Saturation</string>
+    <string name="color_brightness">Brightness</string>
+    <string name="color_sample">Asr  3:30</string>
+    <string name="cancel">Cancel</string>
+    <string name="widget_reminder">Reminder</string>
+    <string name="widget_prayer">Prayer times</string>
+    <string name="widget_combined">Prayer times and reminder</string>
+    <string name="widget_next">Next prayer</string>
+    <string name="combined_widget_desc">The next prayer and today’s times, with the reminder underneath.</string>
+    <string name="next_widget_desc">Just the next prayer and how long until it.</string>
+    <string name="widget_pick_title">Add a widget</string>
+    <string name="widget_pick_note">Tap one and choose where it goes. You can style each one in Settings.</string>
+    <string name="add_widget_short">Add a widget to your home screen</string>
+    <string name="add_city_hint">Add a city</string>
+    <string name="places_hint">Swipe a city aside to remove it.</string>
+    <string name="calendar_today">Today</string>
+    <string name="calendar_more">The day and night</string>
+    <string name="side_prayer">Prayer</string>
+    <string name="both_sides">For both</string>
+    <string name="renew_sun">With the sun</string>
+    <string name="renew_set">At set times</string>
+    <string name="renew_sun_note">A new reminder waits for you after Fajr and after Maghrib.</string>
+    <string name="renew_set_note">A new reminder waits for you at the two times below.</string>
+    <string name="widgets_section">Widgets</string>
+    <string name="widgets_shared">Same for all</string>
+    <string name="widgets_each">Each its own</string>
+    <string name="widgets_shared_note">Every widget shares one look.</string>
+    <string name="widgets_each_note">Style each widget on its own. You can also long-press a widget on your home screen and choose Reconfigure.</string>
+    <string name="widgets_none">No widgets on your home screen yet.</string>
+    <string name="widgets_style_all">All widgets</string>
+    <string name="prayer_credits">Prayer times are calculated on your phone, and Hijri dates follow the Umm al-Qura calendar. Town and city names come from GeoNames (CC BY 4.0) and are stored in the app. Muhib keeps no backups in the cloud, and it goes online only when you tap Update prayer times, to download times from AlAdhan.</string>
+    <string name="welcome_place_title">Where are you?</string>
+    <string name="welcome_place_body">For prayer times and the Qibla. Muhib looks only when you open it, and your location never leaves your phone.</string>
+    <string name="welcome_place_failed">Couldn’t find you. Try again outside, or choose a city.</string>
 </resources>

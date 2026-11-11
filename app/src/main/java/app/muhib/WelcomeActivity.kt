@@ -21,8 +21,9 @@ import android.window.OnBackInvokedCallback
 import android.window.OnBackInvokedDispatcher
 
 /**
- * First run: greet, show what the widget does, help put it on the home screen.
- * Steps: hello -> widget -> done. The done step appears as soon as a widget is placed.
+ * First run: greet, find where you are (or pick a city) for prayer times, show what the widgets
+ * do and help put one on the home screen. Steps: hello -> place -> widget -> done. The done step
+ * appears as soon as a widget is placed.
  */
 class WelcomeActivity : Activity() {
 
@@ -38,7 +39,8 @@ class WelcomeActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
-        steps = listOf(findViewById(R.id.stepHello), findViewById(R.id.stepWidget), findViewById(R.id.stepDone))
+        Accent.paint(window.decorView)
+        steps = listOf(findViewById(R.id.stepHello), findViewById(R.id.stepPlace), findViewById(R.id.stepWidget), findViewById(R.id.stepDone))
 
         if (Build.VERSION.SDK_INT >= 30) {
             window.setDecorFitsSystemWindows(false)
@@ -54,20 +56,19 @@ class WelcomeActivity : Activity() {
         findViewById<TextView>(R.id.previewArabic).text = sample.arabic
         findViewById<TextView>(R.id.previewText).text = sample.text
 
-        val pinSupported = getSystemService(AppWidgetManager::class.java).isRequestPinAppWidgetSupported
+        val pinSupported = Widgets.pinSupported(this)
         findViewById<View>(R.id.addWidget).apply {
             visibility = if (pinSupported) View.VISIBLE else View.GONE
-            setOnClickListener {
-                getSystemService(AppWidgetManager::class.java)
-                    .requestPinAppWidget(ComponentName(this@WelcomeActivity, MuhibWidget::class.java), null, null)
-            }
+            setOnClickListener { WidgetPicker.show(this@WelcomeActivity) }
         }
         // Without one-tap pinning, the manual steps become the main instructions.
         if (!pinSupported) findViewById<View>(R.id.manualTitle).visibility = View.GONE
 
-        findViewById<View>(R.id.helloContinue).setOnClickListener {
-            show(if (MuhibWidget.hasWidgets(this)) DONE else WIDGET)
+        findViewById<View>(R.id.helloContinue).setOnClickListener { show(if (Places.selected(this) != null) afterPlace() else PLACE) }
+        findViewById<View>(R.id.useLocation).setOnClickListener {
+            if (Locator.granted(this)) locate() else requestPermissions(Locator.permissions, ASK_LOCATION)
         }
+        findViewById<View>(R.id.pickCity).setOnClickListener { startActivity(Intent(this, CitySearchActivity::class.java)) }
         findViewById<View>(R.id.langToggle).setOnClickListener {
             Lang.set(this, if (Lang.current(this) == Lang.TR) Lang.EN else Lang.TR)
             recreate()
@@ -85,6 +86,8 @@ class WelcomeActivity : Activity() {
         // The launcher's "add" sheet sits on top of us; once it closes, check whether the widget landed.
         // The launcher can bind it a moment after, so look again shortly.
         checkPlaced()
+        // Back from picking a city: on to the widgets.
+        if (step == PLACE && Places.selected(this) != null && !locating) show(afterPlace())
         window.decorView.postDelayed({ checkPlaced() }, 600)
         window.decorView.postDelayed({ checkPlaced() }, 1500)
     }
@@ -108,7 +111,34 @@ class WelcomeActivity : Activity() {
     }
 
     private fun checkPlaced() {
-        if (step == WIDGET && !isFinishing && MuhibWidget.hasWidgets(this)) show(DONE)
+        if (step == WIDGET && !isFinishing && Widgets.placed(this).isNotEmpty()) show(DONE)
+    }
+
+    private fun afterPlace() = if (Widgets.placed(this).isNotEmpty()) DONE else WIDGET
+
+    private var locating = false
+
+    /** One fix, named from the built-in town list; then on to the widgets. */
+    private fun locate() {
+        locating = true
+        Places.select(this, Places.HERE)
+        findViewById<TextView>(R.id.placeStatus).apply {
+            visibility = View.VISIBLE
+            setText(R.string.locating)
+        }
+        findViewById<View>(R.id.useLocation).isEnabled = false
+        Refresh.here(this, done = {
+            locating = false
+            if (isFinishing) return@here
+            val here = Places.here(this)
+            findViewById<View>(R.id.useLocation).isEnabled = true
+            if (here == null) {
+                findViewById<TextView>(R.id.placeStatus).setText(R.string.welcome_place_failed)
+                return@here
+            }
+            findViewById<TextView>(R.id.placeStatus).text = here.name.ifEmpty { getString(R.string.current_location) }
+            window.decorView.postDelayed({ if (step == PLACE) show(afterPlace()) }, 900)
+        })
     }
 
     private fun show(next: Int) {
@@ -133,6 +163,10 @@ class WelcomeActivity : Activity() {
             HELLO -> {
                 ambient += Motion.breathe(findViewById(R.id.helloGlow))
                 ambient += Motion.spin(findViewById(R.id.helloStar))
+            }
+            PLACE -> {
+                ambient += Motion.ripple(findViewById(R.id.placeRing), delay = 400)
+                ambient += Motion.lift(findViewById(R.id.placePin), to = 6f)
             }
             WIDGET -> {
                 findViewById<View>(R.id.previewCovered).alpha = 1f
@@ -185,7 +219,7 @@ class WelcomeActivity : Activity() {
 
     private fun askForNotificationsThen(next: () -> Unit) {
         Muhib.prefs(this).edit().putBoolean(MainActivity.KEY_ASKED, true).apply()
-        if (Build.VERSION.SDK_INT >= 33 && Reminders.quietOn(this) &&
+        if (Build.VERSION.SDK_INT >= 33 && (Reminders.quietOn(this) || PrayerAlerts.on(this)) &&
             checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
         ) {
             afterPermission = next
@@ -196,6 +230,10 @@ class WelcomeActivity : Activity() {
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        if (requestCode == ASK_LOCATION) {
+            if (grantResults.any { it == PackageManager.PERMISSION_GRANTED }) locate()
+            return
+        }
         afterPermission?.invoke()
         afterPermission = null
     }
@@ -203,6 +241,8 @@ class WelcomeActivity : Activity() {
     private fun finishWelcome(openApp: Boolean) {
         Muhib.prefs(this).edit().putBoolean(KEY_WELCOMED, true).apply()
         Reminders.schedule(this)
+        PrayerAlerts.schedule(this)
+        Widgets.refreshAll(this)
         if (openApp) {
             startActivity(Intent(this, MainActivity::class.java))
         } else {
@@ -213,8 +253,10 @@ class WelcomeActivity : Activity() {
 
     companion object {
         private const val HELLO = 0
-        private const val WIDGET = 1
-        private const val DONE = 2
+        private const val PLACE = 1
+        private const val WIDGET = 2
+        private const val DONE = 3
+        private const val ASK_LOCATION = 2
         private const val KEY_STEP = "step"
         private const val KEY_WELCOMED = "welcomed"
         private const val SAMPLE_ID = "ayah-93-3"

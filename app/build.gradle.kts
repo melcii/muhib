@@ -18,8 +18,8 @@ android {
         applicationId = "app.muhib"
         minSdk = 26
         targetSdk = 36
-        versionCode = 3
-        versionName = "0.3"
+        versionCode = 10
+        versionName = "1.0"
     }
 
     signingConfigs {
@@ -52,4 +52,8 @@ kotlin {
     compilerOptions {
         jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
+}
+
+dependencies {
+    testImplementation("junit:junit:4.13.2")
 }

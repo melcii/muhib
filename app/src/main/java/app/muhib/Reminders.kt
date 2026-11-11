@@ -15,7 +15,8 @@ import java.util.Calendar
 import java.util.concurrent.TimeUnit
 
 /**
- * Twice a day (morning and night) the widget quietly covers itself again with a new pick.
+ * Twice a day the widget quietly covers itself again with a new pick: after Fajr and after
+ * Maghrib, or at two set times if the user prefers (or no place is known yet).
  * A silent notification goes out at most once every 3 to 5 days.
  */
 object Reminders {
@@ -29,6 +30,11 @@ object Reminders {
     fun night(context: Context) = Muhib.prefs(context).getInt(Muhib.KEY_NIGHT, DEFAULT_NIGHT)
     fun quietOn(context: Context) = Muhib.prefs(context).getBoolean(Muhib.KEY_QUIET_REMINDERS, true)
 
+    /** True: renew after Fajr and Maghrib. False: at the morning and night times. */
+    fun withSun(context: Context) = Muhib.prefs(context).getBoolean(KEY_SUN, true)
+    fun setWithSun(context: Context, on: Boolean) = Muhib.prefs(context).edit().putBoolean(KEY_SUN, on).apply()
+    private const val KEY_SUN = "renew_sun"
+
     fun schedule(context: Context) {
         val alarms = context.getSystemService(AlarmManager::class.java)
         val renew = PendingIntent.getBroadcast(
@@ -40,8 +46,16 @@ object Reminders {
         alarms.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, nextSlot(context), renew)
     }
 
-    private fun nextSlot(context: Context): Long {
+    /** The next renewal: Fajr or Maghrib where you are (or the place on screen), else the set times. */
+    fun nextSlot(context: Context): Long {
         val now = System.currentTimeMillis()
+        val place = Places.here(context) ?: Places.selected(context)
+        if (withSun(context) && place != null) {
+            val s = Times.get(context, place)
+            val today = java.time.LocalDate.now(s.zone)
+            return (0L..2L).flatMap { s.day(today.plusDays(it)).let { d -> listOf(d.t[Day.IMSAK], d.t[Day.MAGHRIB]) } }
+                .filter { it > now }.min()
+        }
         return listOf(morning(context), night(context)).flatMap { minutes ->
             (0..1).map { dayOffset ->
                 Calendar.getInstance().apply {
@@ -57,7 +71,7 @@ object Reminders {
 
     fun renew(context: Context) {
         if (Muhib.isRevealed(context)) Muhib.coverAgain(context)
-        MuhibWidget.refreshAll(context)
+        Widgets.refreshAll(context)
         maybeNotify(context)
     }
 
@@ -80,9 +94,12 @@ object Reminders {
         )
         val notification = Notification.Builder(context, CHANNEL)
             .setSmallIcon(R.drawable.ic_stat_muhib)
-            .setColor(context.getColor(R.color.icon_bg))
+            .setColor(Accent.light(context))
             .setContentTitle(local.getString(R.string.notification_title))
-            .setContentIntent(MuhibWidget.openApp(context))
+            .setContentIntent(PendingIntent.getActivity(
+                context, 0, Intent(context, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+            ))
             .setAutoCancel(true)
             .build()
         manager.notify(NOTIFICATION_ID, notification)

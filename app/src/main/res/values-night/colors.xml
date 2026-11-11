@@ -9,4 +9,8 @@
     <color name="hairline">#222826</color>
     <color name="blur_ink">#668FCBAE</color>
     <color name="glow">#338FCBAE</color>
+
+    <color name="forbidden">#6B3A2F</color>
+    <color name="forbidden_ink">#E5A08E</color>
+    <color name="night">#1D2531</color>
 </resources>

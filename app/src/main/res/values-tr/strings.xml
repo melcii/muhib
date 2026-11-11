@@ -16,14 +16,14 @@
     <string name="notification_channel">Sessiz hatırlatmalar</string>
     <string name="notification_title">Seni bekleyen bir şey var.</string>
     <string name="welcome_greeting">Esselâmu aleyküm</string>
-    <string name="welcome_body">Muhib, ana ekranında sessiz bir yol arkadaşı. Bir ayet, bir hadis ya da bir sünnet orada, örtülü hâlde, ihtiyaç duyduğun anı bekler.</string>
+    <string name="welcome_body">Muhib sessiz bir yol arkadaşı. Bulunduğun yerin namaz vakitleri ve ana ekranında örtülü hâlde, ihtiyaç duyduğun anı bekleyen bir ayet, bir hadis ya da bir sünnet.</string>
     <string name="welcome_continue">Devam</string>
     <string name="welcome_widget_title">Hep yakınında olsun</string>
     <string name="welcome_widget_lead">Ana ekranında, örtülü hâlde, ihtiyacın olana kadar bekler.</string>
-    <string name="welcome_widget_body">Bu senin Muhib widget\'ın. Bir kez dokun, senin için geleni gör; tekrar dokun, devamını oku. Her sabah ve her gece kendini yeniden örter.</string>
-    <string name="welcome_add">Ana ekrana ekle</string>
+    <string name="welcome_widget_body">Hatırlatmaya bir kez dokun, sana geleni gör; tekrar dokun, devamını oku. Sabah namazından ve akşam namazından sonra yeniden örtülür. Namaz vakitleri yanında ya da kendi widget’ında durabilir.</string>
+    <string name="welcome_add">Bir widget seç</string>
     <string name="welcome_manual_title">Ya da kendin ekle</string>
-    <string name="welcome_manual_steps">1. Ana ekranında boş bir yere basılı tut.\n2. Widget\'lar\'a dokun.\n3. Muhib\'i bul ve ana ekranına sürükle.</string>
+    <string name="welcome_manual_steps">1. Ana ekranında boş bir yere basılı tut.\n2. Widget’lar’a dokun.\n3. Muhib’i bul ve bir widget’ı ana ekranına sürükle.</string>
     <string name="welcome_later">Sonra</string>
     <string name="welcome_done_title">Seni bekliyor</string>
     <string name="welcome_done_body">En çok ihtiyacın olduğunda dokun.</string>
@@ -38,4 +38,223 @@
     <string name="settings">Ayarlar</string>
     <string name="back">Geri</string>
     <string name="notifications_label">Bildirimler</string>
+
+    <!-- Prayer times -->
+    <string-array name="prayers">
+        <item>İmsak</item>
+        <item>Güneş</item>
+        <item>Öğle</item>
+        <item>İkindi</item>
+        <item>Akşam</item>
+        <item>Yatsı</item>
+    </string-array>
+    <string-array name="prayers_short">
+        <item>İmsak</item>
+        <item>Güneş</item>
+        <item>Öğle</item>
+        <item>İkindi</item>
+        <item>Akşam</item>
+        <item>Yatsı</item>
+    </string-array>
+    <string-array name="hijri_months">
+        <item>Muharrem</item>
+        <item>Safer</item>
+        <item>Rebiülevvel</item>
+        <item>Rebiülahir</item>
+        <item>Cemaziyelevvel</item>
+        <item>Cemaziyelahir</item>
+        <item>Recep</item>
+        <item>Şaban</item>
+        <item>Ramazan</item>
+        <item>Şevval</item>
+        <item>Zilkade</item>
+        <item>Zilhicce</item>
+    </string-array>
+    <string name="left_hm">%1$d sa %2$d dk</string>
+    <string name="left_m">%d dk</string>
+    <string name="widget_left">%1$s vaktine %2$s</string>
+    <string name="next_in">%s vaktine</string>
+    <string name="at_time">saat %s</string>
+    <string name="since">%1$s vakti girdi · %2$s</string>
+    <string name="hijri_from_maghrib">%s · akşamla başladı</string>
+    <string name="current_location">Bulunduğun yer</string>
+    <string name="places">Yerler</string>
+    <string name="add_city">Şehir ekle</string>
+    <string name="search_hint">Şehir ara</string>
+    <string name="no_results">Şehir bulunamadı</string>
+    <string name="remove">Kaldır</string>
+    <string name="local_time">Yerel saat %s</string>
+    <string name="tab_simple">Sade</string>
+    <string name="tab_detailed">Ayrıntılı</string>
+    <string name="tab_qibla">Kıble</string>
+    <string name="prayer_times">Namaz vakitleri</string>
+    <string name="forbidden">Kerahat vakitleri</string>
+    <string name="forbidden_sunrise">Güneş doğarken</string>
+    <string name="forbidden_zenith">Güneş tepedeyken</string>
+    <string name="forbidden_sunset">Güneş batarken</string>
+    <string name="forbidden_note">Bu vakitlerde nafile namaz kılınmaz. Sınırlar yaklaşıktır.</string>
+    <string name="now">Şimdi</string>
+    <string name="prayer_night">Gece</string>
+    <string name="night_first">Gecenin ilk üçte biri</string>
+    <string name="night_second_a">İkinci üçte bir, gece yarısından önce</string>
+    <string name="night_second_b">İkinci üçte bir, gece yarısından sonra</string>
+    <string name="night_last">Gecenin son üçte biri</string>
+    <string name="night_passed">Gecenin %%%d kadarı geçti</string>
+    <string name="night_day">Bu gece, akşamdan imsaka</string>
+    <string name="night_range">%1$s – %2$s</string>
+    <string name="first_third_ends">İlk üçte bir biter</string>
+    <string name="midnight">Gece yarısı</string>
+    <string name="last_third">Son üçte bir başlar</string>
+    <string name="qibla_from_north">kuzeyden · Kâbe’ye %s km</string>
+    <string name="qibla_hint">Telefonu düz tut ve Kâbe en üste gelene kadar dön.</string>
+    <string name="qibla_facing">Kıbleye dönüksün</string>
+    <string name="qibla_no_compass">Bu telefonda pusula yok. Kuzeyden açıyı kullan.</string>
+    <string name="qibla_other_place">%s için kıble</string>
+    <string name="location_title">Neredesin?</string>
+    <string name="location_body">Muhib, namaz vakitlerini ve kıbleyi bulmak için konumunu kullanır. Konuma yalnızca uygulamayı açtığında ya da widget’taki şehre dokunduğunda bakar ve konumun telefonundan hiç çıkmaz.</string>
+    <string name="allow_location">Konuma izin ver</string>
+    <string name="choose_city">Bunun yerine şehir seç</string>
+    <string name="locating">Konum bulunuyor…</string>
+    <string name="try_again">Tekrar dene</string>
+    <string name="menu">Yerler</string>
+    <string name="method">Hesaplama yöntemi</string>
+    <string name="method_mwl">Müslüman Dünya Birliği</string>
+    <string name="method_diyanet">Diyanet, Türkiye</string>
+    <string name="method_isna">ISNA, Kuzey Amerika</string>
+    <string name="method_egypt">Mısır Genel Araştırma Kurumu</string>
+    <string name="method_makkah">Ümmülkurâ, Mekke</string>
+    <string name="method_karachi">Karaçi Üniversitesi</string>
+    <string name="asr">İkindi</string>
+    <string name="asr_standard">Standart</string>
+    <string name="asr_hanafi">Hanefi</string>
+    <string name="asr_note">Hanefi’de ikindi, gölge boyun iki katı olunca, daha geç başlar.</string>
+    <string name="footer">%1$s · İkindi %2$s</string>
+    <string name="widget">Widget</string>
+    <string name="widget_style">Widget görünümü</string>
+    <string name="prayer_widget_desc">Bugünün namaz vakitleri ve sıradaki vakte kalan süre.</string>
+    <string name="widget_no_place">Konum için dokun</string>
+    <string name="background">Arka plan</string>
+    <string name="opacity">Opaklık</string>
+    <string name="opacity_value">%%%d</string>
+    <string name="text_color">Yazı</string>
+    <string name="text_auto">Otomatik</string>
+    <string name="text_light">Açık</string>
+    <string name="text_dark">Koyu</string>
+    <string name="done">Tamam</string>
+    <string name="widget_hint">Konumunu güncellemek için widget’taki şehre dokun. Muhib’i açmak için başka bir yere dokun.</string>
+    <string name="tab_calendar">Takvim</string>
+    <string name="prev_month">Önceki ay</string>
+    <string name="next_month">Sonraki ay</string>
+    <string name="exact_title">Tam zamanlı geri sayım</string>
+    <string name="exact_sub">Widget’ı tam dakikasında günceller</string>
+    <string name="exact_on">Açık</string>
+    <string name="exact_off">İzin ver</string>
+    <string name="exact_ask">Geri sayımı dakikası dakikasına doğru yap</string>
+    <string name="loc_good">Konum %1$s hassasiyetle · %2$s</string>
+    <string name="loc_old">Konumun %s bulundu. Yer değiştirdiysen güncelle.</string>
+    <string name="loc_rough">Konumun kaba (%s hassasiyet). Yön yine yakın, ama GPS konumu daha iyi.</string>
+    <string name="loc_weak">GPS konumu alınamadı; sinyal zayıf olabilir. Son konumun kullanılıyor (%s). Pencere kenarında ya da dışarıda dene.</string>
+    <string name="loc_off">Telefonda konum kapalı. Son konumun kullanılıyor (%s).</string>
+    <string name="loc_turn_on">Konumu aç</string>
+    <string name="loc_denied">Konum izni yok, kıble kayıtlı bir yere göre gösteriliyor.</string>
+    <string name="loc_finding">Konumun bulunuyor…</string>
+    <string name="loc_update">Konumu güncelle</string>
+    <string name="calib_title">Pusulayı ayarla</string>
+    <string name="calib_needed">Pusulanın ayarlanması gerekiyor</string>
+    <string name="calib_done">Pusula ayarlandı</string>
+    <string name="calib_body">Telefonu havada birkaç kez 8 çizer gibi hareket ettir; metal ve mıknatıslardan uzak dur.</string>
+    <string name="calib_link">Pusula yanlış mı? Ayarla</string>
+    <string name="calib_hide">Ayarı gizle</string>
+    <string name="just_now">az önce</string>
+    <string name="minutes_ago">%d dk önce</string>
+    <string name="hours_ago">%d sa önce</string>
+    <string name="days_ago">%d gün önce</string>
+    <string name="metres">%d m</string>
+    <string name="kilometres">%s km</string>
+    <string name="tab_compact">Kompakt</string>
+    <string name="fajr">Sabah</string>
+    <string name="ishraq">İşrak</string>
+    <string name="duha">Kuşluk</string>
+    <string name="evvabin">Evvabin</string>
+    <string name="seher">Seher</string>
+    <string name="night_short">Gece</string>
+    <string name="night_third_1">Gece 1/3</string>
+    <string name="midnight_short">Gece yarısı</string>
+    <string name="night_third_2">Gece 2/3</string>
+    <string name="night_second">Gecenin ikinci üçte biri</string>
+    <string name="night_half_first">Gecenin ilk yarısı</string>
+    <string name="night_half_second">Gecenin ikinci yarısı</string>
+    <string name="seher_name">Seher, gecenin son altıda biri</string>
+    <string name="forbidden_short">Kerahat vakti</string>
+    <string name="compact_in">%s sonra</string>
+    <string name="compact_left">%s kaldı</string>
+    <string name="compact_past">Geçti</string>
+    <string name="compact_hint">Vakitlerini görmek için grafikte bir bölüme dokunun.</string>
+    <string name="update_section">Namaz vakitleri</string>
+    <string name="update_title">Namaz vakitlerini güncelle</string>
+    <string name="update_never">Önümüzdeki 2 ayı AlAdhan’dan indirir</string>
+    <string name="update_done">%1$s güncellendi · %2$s tarihine kadar</string>
+    <string name="update_action">Güncelle</string>
+    <string name="update_running">Güncelleniyor…</string>
+    <string name="update_failed">AlAdhan’a ulaşılamadı. Bağlantınızı kontrol edip tekrar deneyin.</string>
+    <string name="update_none">Önce bir şehir ekleyin veya konuma izin verin.</string>
+    <string name="update_note">Muhib yalnızca Güncelle’ye dokunduğunuzda, kayıtlı her yerin yaklaşık koordinatlarını (1 km kadar) hesaplama yönteminiz ve ikindi seçiminizle birlikte api.aladhan.com’a gönderir. Başka hiçbir şey gönderilmez. Yöntemi değiştirir veya yer değiştirirseniz tekrar Güncelle’ye dokunun; o zamana kadar vakitler telefonda hesaplanır.</string>
+    <string name="source_online">AlAdhan</string>
+    <string name="notify_section">Bildirimler</string>
+    <string name="notify_title">Vakit bildirimleri</string>
+    <string name="notify_sub">Her vakitten önce ve vakit girince kısa bir bildirim</string>
+    <string name="notify_blocked">Bildirimler engelli. İzin vermek için dokunun.</string>
+    <string name="notify_before">Vakitten önce</string>
+    <string name="notify_minutes">%d dk</string>
+    <string name="notify_off">Kapalı</string>
+    <string name="notify_at">Vakit girince</string>
+    <string name="notify_which">Hangi vakitler</string>
+    <string name="notify_none">Hiçbiri</string>
+    <string name="notif_channel">Namaz vakitleri</string>
+    <string name="notif_at">%s vakti</string>
+    <string name="ok">Tamam</string>
+    <string name="accent_section">Renk</string>
+    <string name="accent_note">Uygulamanın her yerinde ve tüm widget’larda kullanılır.</string>
+    <string name="accent_green">Yeşil</string>
+    <string name="accent_blue">Mavi</string>
+    <string name="accent_plum">Mor</string>
+    <string name="accent_amber">Kehribar</string>
+    <string name="accent_custom">Özel</string>
+    <string name="accent_pick">Renk seç</string>
+    <string name="background_pick">Arka plan rengi</string>
+    <string name="color_hue">Ton</string>
+    <string name="color_saturation">Doygunluk</string>
+    <string name="color_brightness">Parlaklık</string>
+    <string name="color_sample">İkindi  15:30</string>
+    <string name="cancel">İptal</string>
+    <string name="widget_reminder">Hatırlatma</string>
+    <string name="widget_prayer">Namaz vakitleri</string>
+    <string name="widget_combined">Namaz vakitleri ve hatırlatma</string>
+    <string name="widget_next">Sıradaki vakit</string>
+    <string name="combined_widget_desc">Sıradaki vakit ve bugünün vakitleri, altında hatırlatma.</string>
+    <string name="next_widget_desc">Yalnızca sıradaki vakit ve kalan süre.</string>
+    <string name="widget_pick_title">Widget ekle</string>
+    <string name="widget_pick_note">Birine dokun ve nereye koyacağını seç. Her birini Ayarlar’da ayrı ayrı görünüşlendirebilirsin.</string>
+    <string name="add_widget_short">Ana ekranına bir widget ekle</string>
+    <string name="add_city_hint">Şehir ekle</string>
+    <string name="places_hint">Silmek için bir şehri yana kaydır.</string>
+    <string name="calendar_today">Bugün</string>
+    <string name="calendar_more">Gün ve gece</string>
+    <string name="side_prayer">Namaz</string>
+    <string name="both_sides">İkisi için</string>
+    <string name="renew_sun">Güneşe göre</string>
+    <string name="renew_set">Belirli saatlerde</string>
+    <string name="renew_sun_note">Sabah namazından ve akşam namazından sonra seni yeni bir hatırlatma bekler.</string>
+    <string name="renew_set_note">Aşağıdaki iki saatte seni yeni bir hatırlatma bekler.</string>
+    <string name="widgets_section">Widget’lar</string>
+    <string name="widgets_shared">Hepsi aynı</string>
+    <string name="widgets_each">Her biri ayrı</string>
+    <string name="widgets_shared_note">Tüm widget’lar aynı görünür.</string>
+    <string name="widgets_each_note">Her widget’ı ayrı ayrı ayarla. Ana ekranda bir widget’a basılı tutup Yeniden yapılandır’ı da seçebilirsin.</string>
+    <string name="widgets_none">Ana ekranında henüz widget yok.</string>
+    <string name="widgets_style_all">Tüm widget’lar</string>
+    <string name="prayer_credits">Namaz vakitleri telefonunda hesaplanır, hicri tarihler Ümmülkurâ takvimine göredir. Şehir ve kasaba adları GeoNames’ten (CC BY 4.0) gelir ve uygulamanın içindedir. Muhib buluta yedek almaz ve yalnızca Namaz vakitlerini güncelle’ye dokunduğunda, AlAdhan’dan vakit indirmek için internete bağlanır.</string>
+    <string name="welcome_place_title">Neredesin?</string>
+    <string name="welcome_place_body">Namaz vakitleri ve kıble için. Muhib konumuna yalnızca uygulamayı açtığında bakar ve konumun telefonundan hiç çıkmaz.</string>
+    <string name="welcome_place_failed">Konumun bulunamadı. Açık havada tekrar dene ya da bir şehir seç.</string>
 </resources>
