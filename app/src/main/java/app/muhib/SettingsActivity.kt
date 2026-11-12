@@ -36,15 +36,19 @@ fun openExactAlarmSettings(context: Context) {
 class SettingsActivity : Activity() {
 
     override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(Lang.wrap(newBase))
+        super.attachBaseContext(Look.wrap(Lang.wrap(newBase)))
     }
 
     private var side = PRAYER
+    private var createdKey = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Fonts.apply(this)
         setContentView(R.layout.activity_settings)
         Accent.paint(window.decorView)
+        Look.window(this)
+        createdKey = Accent.key(this)
         if (Build.VERSION.SDK_INT >= 30) {
             window.setDecorFitsSystemWindows(false)
             findViewById<View>(R.id.scroll).setOnApplyWindowInsetsListener { v, insets ->
@@ -89,6 +93,17 @@ class SettingsActivity : Activity() {
         }
 
         // Shared.
+        findViewById<View>(R.id.matchRow).setOnClickListener {
+            Look.setOn(this, !Look.on(this))
+            recreate()
+        }
+        findViewById<View>(R.id.fontRow).setOnClickListener {
+            FontPicker.show(this) { font ->
+                Fonts.set(this, font)
+                Widgets.refreshAll(applicationContext)
+                recreate()
+            }
+        }
         findViewById<View>(R.id.styleShared).setOnClickListener { setShared(true) }
         findViewById<View>(R.id.styleEach).setOnClickListener { setShared(false) }
         findViewById<View>(R.id.addWidgetRow).apply {
@@ -118,6 +133,8 @@ class SettingsActivity : Activity() {
 
     override fun onResume() {
         super.onResume()
+        // Back from styling a widget the app follows: redraw in its colours.
+        if (Accent.key(this) != createdKey) return recreate()
         val exact = Widgets.exact(this)
         findViewById<TextView>(R.id.exactState).apply {
             setText(if (exact) R.string.exact_on else R.string.exact_off)
@@ -368,6 +385,13 @@ class SettingsActivity : Activity() {
                 setAccent(Accent.CUSTOM, it)
             }
         })
+        findViewById<Switch>(R.id.matchSwitch).isChecked = Look.on(this)
+        findViewById<TextView>(R.id.matchSub).setText(when {
+            !Look.on(this) -> R.string.match_off
+            Look.style(this) == null -> R.string.match_auto
+            else -> R.string.match_on
+        })
+        findViewById<TextView>(R.id.fontName).setText(Fonts.all[Fonts.choice(this)].name)
         findViewById<TextView>(R.id.accentName).text =
             Accent.presets.getOrNull(choice)?.let { getString(it.name) } ?: getString(R.string.accent_custom)
     }
@@ -394,6 +418,8 @@ class SettingsActivity : Activity() {
         if (shared == WidgetStyle.shared(this)) return
         WidgetStyle.setShared(this, shared)
         Widgets.refreshAll(applicationContext)
+        // The app may follow a different widget's colours now.
+        if (Accent.key(this) != createdKey) return recreate()
         renderWidgets()
         Motion.stagger(Motion.children(findViewById(R.id.widgetList)), step = 40, rise = 6f)
     }

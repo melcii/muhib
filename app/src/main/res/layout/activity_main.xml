@@ -143,7 +143,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:fontFamily="@font/inter_light"
+                            android:fontFamily="?attr/fontLight"
                             android:letterSpacing="-0.02"
                             android:textColor="@color/ink"
                             android:textSize="52sp" />
@@ -183,7 +183,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:fontFamily="@font/inter_medium"
+                            android:fontFamily="?attr/fontMedium"
                             android:gravity="center"
                             android:textColor="@color/accent"
                             android:textSize="14sp" />
@@ -217,7 +217,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
                             android:layout_marginTop="4dp"
-                            android:fontFamily="@font/inter_medium" />
+                            android:fontFamily="?attr/fontMedium" />
 
                         <TextView
                             android:id="@+id/compactPickSub"
@@ -286,7 +286,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:fontFamily="@font/inter_light"
+                            android:fontFamily="?attr/fontLight"
                             android:textColor="@color/ink"
                             android:textSize="40sp" />
 
@@ -329,7 +329,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
-                                android:fontFamily="@font/inter_medium" />
+                                android:fontFamily="?attr/fontMedium" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -494,7 +494,7 @@
                             android:id="@+id/headline"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_medium"
+                            android:fontFamily="?attr/fontMedium"
                             android:gravity="center"
                             android:letterSpacing="0.02"
                             android:textColor="@color/accent"
@@ -517,7 +517,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="18dp"
                             android:fallbackLineSpacing="false"
-                            android:fontFamily="@font/inter_light"
+                            android:fontFamily="?attr/fontLight"
                             android:gravity="center"
                             android:lineSpacingMultiplier="1.4"
                             android:textColor="@color/ink"
@@ -561,7 +561,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="18dp"
-                            android:fontFamily="@font/inter_light"
+                            android:fontFamily="?attr/fontLight"
                             android:gravity="center"
                             android:lineSpacingMultiplier="1.2"
                             android:text="@string/prompt"

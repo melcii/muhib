@@ -117,7 +117,7 @@
                     android:id="@+id/opacityValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter_medium"
+                    android:fontFamily="?attr/fontMedium"
                     android:textColor="@color/accent"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -131,6 +131,36 @@
                 android:layout_marginEnd="-12dp"
                 android:minHeight="40dp" />
         </LinearLayout>
+
+        <TextView
+            style="@style/Muhib.Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:paddingStart="4dp"
+            android:text="@string/font_section" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/fonts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingStart="4dp"
+            android:text="@string/font_shared_note"
+            android:textColor="@color/muted"
+            android:textSize="12sp" />
 
         <TextView
             style="@style/Muhib.Label"

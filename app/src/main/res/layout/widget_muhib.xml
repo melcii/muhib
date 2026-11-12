@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/inter_light"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:text="@string/prompt"
                     android:textColor="@color/ink"
@@ -75,10 +75,12 @@
 
             <TextView
                 android:id="@+id/arabic"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeStepGranularity="1sp"
                 android:autoSizeMinTextSize="12sp"
                 android:autoSizeTextType="uniform"
                 android:gravity="center"
@@ -90,10 +92,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1.2"
-                android:autoSizeMaxTextSize="16sp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeStepGranularity="1sp"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeTextType="uniform"
-                android:fontFamily="@font/inter_light"
+                android:fontFamily="sans-serif-thin"
                 android:gravity="center"
                 android:textColor="@color/ink" />
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The app's three text weights; each font choice fills them (see Fonts.kt). -->
+    <attr name="fontRegular" format="reference|string" />
+    <attr name="fontLight" format="reference|string" />
+    <attr name="fontMedium" format="reference|string" />
+</resources>

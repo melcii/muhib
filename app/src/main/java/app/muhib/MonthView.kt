@@ -72,7 +72,7 @@ class MonthView(private val context: Context, private val grid: LinearLayout, pr
         textSize = size
         setTextColor(color)
         gravity = Gravity.CENTER
-        typeface = context.resources.getFont(if (bold) R.font.inter_medium else R.font.inter)
+        typeface = if (bold) Fonts.medium(context) else Fonts.regular(context)
         importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
     }
 

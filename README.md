@@ -15,7 +15,7 @@ A quiet Islamic companion for Android: prayer times, the Qibla and a Hijri calen
 ## Widgets
 - **Reminder:** blurred with *"Tap this when you need it the most"*. Tap once to reveal the reminder in place, and again to open the app.
 - **Prayer times:** the city, the six times with the current one highlighted, and the countdown to the next. Tap the city to update your location.
-- **Prayer times and reminder:** both in one widget.
+- **Prayer times and reminder:** both in one widget. Only the reminder is covered. It adapts to its height: compact at about 2 rows, the meaning at 3, and the Arabic as well from about 4.
 - **Next prayer:** a small 2×1 with just the next prayer and how long until it.
 
 Every widget can also be placed on the lock screen where Android allows it (Android 16 QPR2 on Pixel phones). Under **Settings → Widgets**, either every widget shares one style or each widget gets its own. A style is the background colour (any colour, or Auto to follow light and dark mode), the opacity, and the text colour.
@@ -31,6 +31,8 @@ Settings has two sides, **Prayer** and **Muhib**. What both share sits underneat
   - A quiet note can come every few days.
 - **Both:**
   - Accent colour: green, blue, plum, amber or your own.
+  - Match my widget: the app wears your widget's background and text colours (on by default).
+  - Font: Inter, Classic, Airy, Typewriter or Playful, the same in the app and on every widget.
   - Widget styles.
   - Exact countdown.
   - Add a widget.

@@ -261,4 +261,35 @@
     <string name="welcome_place_title">Where are you?</string>
     <string name="welcome_place_body">For prayer times and the Qibla. Muhib looks only when you open it, and your location never leaves your phone.</string>
     <string name="welcome_place_failed">Couldn’t find you. Try again outside, or choose a city.</string>
+    <string name="preview_city">Istanbul</string>
+    <string name="preview_left">Maghrib in 1h 20m</string>
+    <string name="preview_left_short">1h 20m</string>
+    <string name="preview_at">5:49 · Istanbul</string>
+    <string name="preview_n0">Imsak</string>
+    <string name="preview_n1">Sunrise</string>
+    <string name="preview_n2">Dhuhr</string>
+    <string name="preview_n3">Asr</string>
+    <string name="preview_n4">Maghrib</string>
+    <string name="preview_n5">Isha</string>
+    <string name="preview_t0" translatable="true">5:42</string>
+    <string name="preview_t1" translatable="true">7:10</string>
+    <string name="preview_t2" translatable="true">12:31</string>
+    <string name="preview_t3" translatable="true">3:28</string>
+    <string name="preview_t4" translatable="true">5:49</string>
+    <string name="preview_t5" translatable="true">7:12</string>
+    <string name="match_title">Match my widget</string>
+    <string name="match_on">The app wears your widget’s colors.</string>
+    <string name="match_auto">Your widget is on Auto, so the app follows your phone’s light or dark mode.</string>
+    <string name="match_off">The app keeps its own colors.</string>
+    <string name="font_section">Font</string>
+    <string name="font_change">Change font</string>
+    <string name="font_title">Choose a font</string>
+    <string name="font_aa">Aa</string>
+    <string name="font_inter">Inter</string>
+    <string name="font_serif">Classic</string>
+    <string name="font_airy">Airy</string>
+    <string name="font_mono">Typewriter</string>
+    <string name="font_playful">Playful</string>
+    <string name="font_note">Used in the app and on every widget. These are fonts built into your phone, so they can look a little different from one phone to another.</string>
+    <string name="font_shared_note">The font is the same in the app and on every widget.</string>
 </resources>

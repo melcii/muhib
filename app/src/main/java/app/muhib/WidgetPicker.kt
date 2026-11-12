@@ -36,7 +36,7 @@ object WidgetPicker {
             list.addView(TextView(activity).apply {
                 setText(Widgets.name(kind))
                 textSize = 14f
-                typeface = activity.resources.getFont(R.font.inter_medium)
+                typeface = Fonts.medium(activity)
                 setTextColor(activity.getColor(R.color.ink))
                 setPadding(px(4), px(18), 0, px(8))
             })

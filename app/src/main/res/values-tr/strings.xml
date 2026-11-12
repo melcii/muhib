@@ -257,4 +257,35 @@
     <string name="welcome_place_title">Neredesin?</string>
     <string name="welcome_place_body">Namaz vakitleri ve kıble için. Muhib konumuna yalnızca uygulamayı açtığında bakar ve konumun telefonundan hiç çıkmaz.</string>
     <string name="welcome_place_failed">Konumun bulunamadı. Açık havada tekrar dene ya da bir şehir seç.</string>
+    <string name="preview_city">İstanbul</string>
+    <string name="preview_left">Akşam vaktine 1 sa 20 dk</string>
+    <string name="preview_left_short">1 sa 20 dk</string>
+    <string name="preview_at">17:49 · İstanbul</string>
+    <string name="preview_n0">İmsak</string>
+    <string name="preview_n1">Güneş</string>
+    <string name="preview_n2">Öğle</string>
+    <string name="preview_n3">İkindi</string>
+    <string name="preview_n4">Akşam</string>
+    <string name="preview_n5">Yatsı</string>
+    <string name="preview_t0" translatable="true">05:42</string>
+    <string name="preview_t1" translatable="true">07:10</string>
+    <string name="preview_t2" translatable="true">12:31</string>
+    <string name="preview_t3" translatable="true">15:28</string>
+    <string name="preview_t4" translatable="true">17:49</string>
+    <string name="preview_t5" translatable="true">19:12</string>
+    <string name="match_title">Widget’ımla aynı olsun</string>
+    <string name="match_on">Uygulama widget’ının renklerini kullanır.</string>
+    <string name="match_auto">Widget’ın Otomatik’te, bu yüzden uygulama telefonunun açık ya da koyu moduna uyar.</string>
+    <string name="match_off">Uygulama kendi renklerini kullanır.</string>
+    <string name="font_section">Yazı tipi</string>
+    <string name="font_change">Yazı tipini değiştir</string>
+    <string name="font_title">Bir yazı tipi seç</string>
+    <string name="font_aa">Aa</string>
+    <string name="font_inter">Inter</string>
+    <string name="font_serif">Klasik</string>
+    <string name="font_airy">Hafif</string>
+    <string name="font_mono">Daktilo</string>
+    <string name="font_playful">Eğlenceli</string>
+    <string name="font_note">Uygulamada ve tüm widget’larda kullanılır. Bunlar telefonunda yerleşik yazı tipleridir, bu yüzden telefondan telefona biraz farklı görünebilir.</string>
+    <string name="font_shared_note">Yazı tipi uygulamada ve tüm widget’larda aynıdır.</string>
 </resources>

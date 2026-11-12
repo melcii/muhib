@@ -28,7 +28,7 @@ class DayChart(context: Context, attrs: AttributeSet? = null) : View(context, at
 
     private val dp = resources.displayMetrics.density
     private val sp = resources.displayMetrics.scaledDensity
-    private val medium = resources.getFont(R.font.inter_medium)
+    private val medium = Fonts.medium(context)
 
     private val fill = Paint(Paint.ANTI_ALIAS_FLAG)
     private val outline = Paint(Paint.ANTI_ALIAS_FLAG).apply {

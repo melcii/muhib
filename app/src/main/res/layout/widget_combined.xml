@@ -150,7 +150,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/inter_light"
+                        android:fontFamily="sans-serif-light"
                         android:maxLines="2"
                         android:textSize="15sp" />
                 </LinearLayout>
@@ -164,15 +164,31 @@
                 android:orientation="vertical"
                 android:paddingTop="6dp">
 
+                <!-- Shown only when the widget is tall enough -->
+                <TextView
+                    android:id="@+id/arabic"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.9"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:textDirection="rtl"
+                    android:visibility="gone" />
+
                 <TextView
                     android:id="@+id/text"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:autoSizeMaxTextSize="15sp"
+                    android:autoSizeMaxTextSize="24sp"
+                    android:autoSizeStepGranularity="1sp"
                     android:autoSizeMinTextSize="10sp"
                     android:autoSizeTextType="uniform"
-                    android:fontFamily="@font/inter_light"
+                    android:fontFamily="sans-serif-thin"
                     android:gravity="center" />
 
                 <TextView

@@ -25,13 +25,15 @@ class WidgetStyleActivity : Activity() {
     private var kind = Widgets.PRAYER
 
     override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(Lang.wrap(newBase))
+        super.attachBaseContext(Look.wrap(Lang.wrap(newBase)))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Fonts.apply(this)
         setContentView(R.layout.activity_widget_style)
         Accent.paint(window.decorView)
+        Look.window(this)
         // Placing the widget succeeds even if this screen is just closed.
         val widgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID)
         if (widgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
@@ -87,6 +89,45 @@ class WidgetStyleActivity : Activity() {
 
         listOf(R.id.textAuto to WidgetStyle.TEXT_AUTO, R.id.textLight to WidgetStyle.TEXT_LIGHT, R.id.textDark to WidgetStyle.TEXT_DARK)
             .forEach { (id, v) -> findViewById<View>(id).setOnClickListener { update(style.copy(text = v)) } }
+
+        // Fonts: one for the app and every widget, so picking one here redraws this screen too.
+        val fonts = findViewById<LinearLayout>(R.id.fonts)
+        val current = Fonts.choice(this)
+        Fonts.all.forEachIndexed { i, font ->
+            fonts.addView(LinearLayout(this).apply {
+                orientation = LinearLayout.VERTICAL
+                gravity = android.view.Gravity.CENTER
+                setPadding(dp(18), dp(10), dp(18), dp(10))
+                minimumWidth = dp(84)
+                background = android.graphics.drawable.GradientDrawable().apply {
+                    cornerRadius = dp(18).toFloat()
+                    setColor(Look.card(context))
+                    setStroke(dp(if (i == current) 2 else 1), if (i == current) Accent.color(context) else getColor(R.color.hairline))
+                }
+                contentDescription = getString(font.name)
+                addView(TextView(context).apply {
+                    setText(R.string.font_aa)
+                    textSize = 26f
+                    typeface = Fonts.sample(context, i)
+                    setTextColor(getColor(R.color.ink))
+                    gravity = android.view.Gravity.CENTER
+                })
+                addView(TextView(context).apply {
+                    setText(font.name)
+                    textSize = 11f
+                    maxLines = 1
+                    typeface = Fonts.sample(context, i)
+                    setTextColor(if (i == current) Accent.color(context) else getColor(R.color.muted))
+                    gravity = android.view.Gravity.CENTER
+                })
+                setOnClickListener {
+                    if (i == current) return@setOnClickListener
+                    Fonts.set(this@WidgetStyleActivity, i)
+                    Widgets.refreshAll(applicationContext)
+                    recreate()
+                }
+            }, LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply { marginEnd = dp(8) })
+        }
 
         findViewById<View>(R.id.exactLink).setOnClickListener { openExactAlarmSettings(this) }
         render()

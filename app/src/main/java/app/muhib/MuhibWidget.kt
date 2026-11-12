@@ -1,9 +1,7 @@
 package app.muhib
 
-import android.appwidget.AppWidgetManager
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 
 /**
  * Covered: a blurred card that says "Tap this when you need it the most".
@@ -11,9 +9,6 @@ import android.os.Bundle
  * Drawing lives in [Widgets], shared with the combined widget.
  */
 class MuhibWidget : BaseWidget() {
-
-    override fun onAppWidgetOptionsChanged(context: Context, manager: AppWidgetManager, id: Int, options: Bundle) =
-        Widgets.refreshAll(context)
 
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == ACTION_REVEAL) {

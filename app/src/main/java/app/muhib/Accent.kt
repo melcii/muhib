@@ -47,7 +47,7 @@ object Accent {
     }.apply()
 
     /** Changes whenever the accent does: screens compare it to know when to redraw. */
-    fun key(context: Context) = "${choice(context)}:${custom(context)}"
+    fun key(context: Context) = "${choice(context)}:${custom(context)}:${Look.key(context)}:${Fonts.choice(context)}"
 
     fun night(context: Context) =
         context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
@@ -79,18 +79,24 @@ object Accent {
 
     // ---- painting views ----
 
-    /** Recolours everything under [root] that was drawn in the resource green. */
+    /**
+     * Recolours everything under [root] that was drawn in the resource green, and, when the app
+     * wears the widget's colours ([Look]), the cards and the page as well.
+     */
     fun paint(root: View) {
         val c = root.context
         val from = c.getColor(R.color.accent)
-        val fromSoft = c.getColor(R.color.accent_soft)
-        val to = color(c)
-        val toSoft = soft(c)
-        if (from == to && fromSoft == toSoft) return
-        walk(root, from, fromSoft, to, toSoft)
+        val swaps = mapOf(
+            from to color(c),
+            c.getColor(R.color.accent_soft) to soft(c),
+            c.getColor(R.color.card) to Look.card(c),
+            c.getColor(R.color.paper) to Look.paper(c),
+        ).filter { (a, b) -> a != b }
+        if (swaps.isEmpty()) return
+        walk(root, from, color(c), swaps)
     }
 
-    private fun walk(v: View, from: Int, fromSoft: Int, to: Int, toSoft: Int) {
+    private fun walk(v: View, from: Int, to: Int, swaps: Map<Int, Int>) {
         if (v is TextView && v.currentTextColor == from) v.setTextColor(to)
         if (v is ImageView && v.tag == "accent") v.imageTintList = ColorStateList.valueOf(to)
         if (v is Switch) {
@@ -109,19 +115,17 @@ object Accent {
             v.progressTintList = ColorStateList.valueOf(to)
             v.thumbTintList = ColorStateList.valueOf(to)
         }
-        v.background?.let { recolor(it.mutate(), from, fromSoft, to, toSoft) }
-        if (v is ViewGroup) for (i in 0 until v.childCount) walk(v.getChildAt(i), from, fromSoft, to, toSoft)
+        v.background?.let { recolor(it.mutate(), swaps) }
+        if (v is ViewGroup) for (i in 0 until v.childCount) walk(v.getChildAt(i), from, to, swaps)
     }
 
-    private fun recolor(d: Drawable, from: Int, fromSoft: Int, to: Int, toSoft: Int) {
+    private fun recolor(d: Drawable, swaps: Map<Int, Int>) {
         when (d) {
-            is GradientDrawable -> when (d.color?.defaultColor) {
-                from -> d.setColor(to)
-                fromSoft -> d.setColor(toSoft)
-            }
-            is LayerDrawable -> for (i in 0 until d.numberOfLayers) recolor(d.getDrawable(i), from, fromSoft, to, toSoft)
+            is GradientDrawable -> d.color?.defaultColor?.let { swaps[it] }?.let { d.setColor(it) }
+            is android.graphics.drawable.ColorDrawable -> swaps[d.color]?.let { d.color = it }
+            is LayerDrawable -> for (i in 0 until d.numberOfLayers) recolor(d.getDrawable(i), swaps)
             is DrawableContainer -> (d.constantState as? DrawableContainer.DrawableContainerState)?.let { s ->
-                for (i in 0 until s.childCount) s.getChild(i)?.let { recolor(it, from, fromSoft, to, toSoft) }
+                for (i in 0 until s.childCount) s.getChild(i)?.let { recolor(it, swaps) }
             }
         }
     }

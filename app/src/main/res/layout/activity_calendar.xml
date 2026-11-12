@@ -98,7 +98,7 @@
                         style="@style/Muhib.RowText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="?attr/fontMedium"
                         android:textSize="16sp" />
 
                     <TextView
@@ -132,7 +132,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:fontFamily="@font/inter_medium"
+            android:fontFamily="?attr/fontMedium"
             android:paddingStart="4dp" />
 
         <TextView

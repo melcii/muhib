@@ -125,7 +125,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
-                            android:fontFamily="@font/inter_medium"
+                            android:fontFamily="?attr/fontMedium"
                             android:textColor="@color/accent"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -230,7 +230,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
-                            android:fontFamily="@font/inter_medium"
+                            android:fontFamily="?attr/fontMedium"
                             android:textColor="@color/accent"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -461,7 +461,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
-                            android:fontFamily="@font/inter_medium"
+                            android:fontFamily="?attr/fontMedium"
                             android:textColor="@color/accent"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -502,7 +502,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
-                            android:fontFamily="@font/inter_medium"
+                            android:fontFamily="?attr/fontMedium"
                             android:textColor="@color/accent"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -604,7 +604,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="14dp"
-                android:fontFamily="@font/inter_medium"
+                android:fontFamily="?attr/fontMedium"
                 android:textColor="@color/accent"
                 android:textSize="14sp" />
 
@@ -616,6 +616,122 @@
                 android:text="@string/accent_note"
                 android:textColor="@color/muted"
                 android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Muhib.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <LinearLayout
+                android:id="@+id/matchRow"
+                style="@style/Muhib.Row"
+                android:background="?android:attr/selectableItemBackground"
+                android:minHeight="68dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="16dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_brush" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        style="@style/Muhib.RowText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/match_title" />
+
+                    <TextView
+                        android:id="@+id/matchSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/muted"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/matchSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:clickable="false"
+                    android:focusable="false" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/Muhib.Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:paddingStart="4dp"
+            android:text="@string/font_section" />
+
+        <LinearLayout
+            style="@style/Muhib.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <LinearLayout
+                android:id="@+id/fontRow"
+                style="@style/Muhib.Row"
+                android:background="?android:attr/selectableItemBackground"
+                android:minHeight="72dp">
+
+                <TextView
+                    android:id="@+id/fontSample"
+                    android:layout_width="38dp"
+                    android:layout_height="wrap_content"
+                    android:importantForAccessibility="no"
+                    android:text="@string/font_aa"
+                    android:textColor="@color/ink"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        style="@style/Muhib.RowText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/font_change" />
+
+                    <TextView
+                        android:id="@+id/fontName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/muted"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_next" />
+            </LinearLayout>
         </LinearLayout>
         <TextView
             style="@style/Muhib.Label"
@@ -718,7 +834,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:fontFamily="@font/inter_medium"
+                    android:fontFamily="?attr/fontMedium"
                     android:textColor="@color/accent"
                     android:textSize="14sp" />
             </LinearLayout>

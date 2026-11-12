@@ -26,7 +26,7 @@ class QiblaDial(context: Context, attrs: AttributeSet? = null) : View(context, a
         textAlign = Paint.Align.CENTER
         textSize = 13 * dp
         color = context.getColor(R.color.muted)
-        typeface = resources.getFont(R.font.inter_medium)
+        typeface = Fonts.medium(context)
     }
     private val box = RectF()
     private val pointer = Path()

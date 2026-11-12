@@ -23,13 +23,15 @@ class CitySearchActivity : Activity() {
     private var generation = 0
 
     override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(Lang.wrap(newBase))
+        super.attachBaseContext(Look.wrap(Lang.wrap(newBase)))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Fonts.apply(this)
         setContentView(R.layout.activity_search)
         Accent.paint(window.decorView)
+        Look.window(this)
         if (Build.VERSION.SDK_INT >= 30) {
             window.setDecorFitsSystemWindows(false)
             findViewById<View>(R.id.page).setOnApplyWindowInsetsListener { v, insets ->

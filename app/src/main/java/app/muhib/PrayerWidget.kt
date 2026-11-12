@@ -58,12 +58,26 @@ object Widgets {
         if (kinds.any { it != REMINDER && ids(context, it).isNotEmpty() }) scheduleTick(context) else cancelTick(context)
     }
 
-    fun build(context: Context, kind: Int, id: Int, style: WidgetStyle = WidgetStyle.load(context, id)): RemoteViews = when (kind) {
-        REMINDER -> reminder(context, style)
-        PRAYER -> prayer(context, style)
-        COMBINED -> combined(context, style)
-        else -> next(context, style)
+    /** [font] draws a preview in another font than the chosen one. */
+    fun build(context: Context, kind: Int, id: Int, style: WidgetStyle = WidgetStyle.load(context, id), font: Int? = null): RemoteViews {
+        previewFont = font
+        try {
+            return when (kind) {
+                REMINDER -> reminder(context, style)
+                PRAYER -> prayer(context, style)
+                COMBINED -> combined(context, style, id)
+                else -> next(context, style)
+            }
+        } finally {
+            previewFont = null
+        }
     }
+
+    private var previewFont: Int? = null
+
+    /** Widget text in the app's font. */
+    private fun f(context: Context, text: CharSequence, weight: Int) =
+        Fonts.span(context, text, weight, previewFont ?: Fonts.choice(context))
 
     /** While the widget's city is being located. */
     fun showLocating(context: Context) {
@@ -71,7 +85,7 @@ object Widgets {
         val m = AppWidgetManager.getInstance(context)
         for ((kind, layout) in listOf(PRAYER to R.layout.widget_prayer, COMBINED to R.layout.widget_combined)) {
             val v = RemoteViews(context.packageName, layout)
-            v.setTextViewText(R.id.city, c.getString(R.string.locating))
+            v.setTextViewText(R.id.city, f(context, c.getString(R.string.locating), Fonts.MEDIUM))
             m.partiallyUpdateAppWidget(ids(context, kind), v)
         }
     }
@@ -81,6 +95,8 @@ object Widgets {
     private val nameIds = intArrayOf(R.id.n0, R.id.n1, R.id.n2, R.id.n3, R.id.n4, R.id.n5)
     private val timeIds = intArrayOf(R.id.t0, R.id.t1, R.id.t2, R.id.t3, R.id.t4, R.id.t5)
     private const val ARABIC_MAX_IN_WIDGET = 110
+    /** A tall combined widget fits longer Arabic (the vowel marks count as characters too). */
+    private const val ARABIC_MAX_TALL = 260
 
     private fun background(context: Context, v: RemoteViews, style: WidgetStyle) {
         v.setInt(R.id.bg, "setColorFilter", style.background(context))
@@ -114,7 +130,7 @@ object Widgets {
         v.setInt(R.id.blur, "setImageAlpha", if (style.lightText(context)) 0x66 else 0x4D)
         v.setInt(R.id.star, "setColorFilter", ink)
         v.setTextColor(R.id.prompt, style.textColor(context))
-        v.setTextViewText(R.id.prompt, Lang.wrap(context).getString(R.string.prompt))
+        v.setTextViewText(R.id.prompt, f(context, Lang.wrap(context).getString(R.string.prompt), Fonts.LIGHT))
     }
 
     private fun reminder(context: Context, style: WidgetStyle): RemoteViews {
@@ -128,8 +144,8 @@ object Widgets {
             val arabic = reminder.arabic?.takeIf { it.length <= ARABIC_MAX_IN_WIDGET }
             v.setTextViewText(R.id.arabic, arabic.orEmpty())
             v.setViewVisibility(R.id.arabic, if (arabic == null) View.GONE else View.VISIBLE)
-            v.setTextViewText(R.id.text, reminder.text)
-            v.setTextViewText(R.id.source, reminder.source)
+            v.setTextViewText(R.id.text, f(context, reminder.text, Fonts.LIGHT))
+            v.setTextViewText(R.id.source, f(context, reminder.source, Fonts.REGULAR))
             v.setTextColor(R.id.arabic, style.textColor(context))
             v.setTextColor(R.id.text, style.textColor(context))
             v.setTextColor(R.id.source, style.dim(context))
@@ -149,26 +165,26 @@ object Widgets {
         val highlight = style.highlight(context)
         v.setTextColor(R.id.left, highlight)
         v.setOnClickPendingIntent(R.id.header, locate(context))
-        c.resources.getStringArray(R.array.prayers_short).forEachIndexed { i, n -> v.setTextViewText(nameIds[i], n) }
+        c.resources.getStringArray(R.array.prayers_short).forEachIndexed { i, n -> v.setTextViewText(nameIds[i], f(context, n, Fonts.REGULAR)) }
 
         val place = place(context)
         val schedule = place?.let { Times.get(context, it) }
         val m = schedule?.let { Moment(it) }
         if (place == null || m == null) {
-            v.setTextViewText(R.id.city, c.getString(R.string.app_name))
-            v.setTextViewText(R.id.left, c.getString(R.string.widget_no_place))
+            v.setTextViewText(R.id.city, f(context, c.getString(R.string.app_name), Fonts.MEDIUM))
+            v.setTextViewText(R.id.left, f(context, c.getString(R.string.widget_no_place), Fonts.MEDIUM))
             for (i in 0..5) {
-                v.setTextViewText(timeIds[i], "--:--")
+                v.setTextViewText(timeIds[i], f(context, "--:--", Fonts.MEDIUM))
                 v.setTextColor(nameIds[i], style.dim(context))
                 v.setTextColor(timeIds[i], style.dim(context))
             }
             return
         }
-        v.setTextViewText(R.id.city, place.name.ifEmpty { c.getString(R.string.current_location) })
-        v.setTextViewText(R.id.left, c.getString(R.string.widget_left, Fmt.prayer(c, m.next), Fmt.left(c, m.nextAt - m.now)))
+        v.setTextViewText(R.id.city, f(context, place.name.ifEmpty { c.getString(R.string.current_location) }, Fonts.MEDIUM))
+        v.setTextViewText(R.id.left, f(context, c.getString(R.string.widget_left, Fmt.prayer(c, m.next), Fmt.left(c, m.nextAt - m.now)), Fonts.MEDIUM))
         val day = m.day!!
         for (i in 0..5) {
-            v.setTextViewText(timeIds[i], Fmt.time(c, day.t[i], schedule.zone, short = true))
+            v.setTextViewText(timeIds[i], f(context, Fmt.time(c, day.t[i], schedule.zone, short = true), Fonts.MEDIUM))
             // The time we are in stands out; the countdown above already names the next one.
             val now = i == m.previous
             v.setTextColor(nameIds[i], if (now) highlight else style.dim(context))
@@ -184,18 +200,55 @@ object Widgets {
         return v
     }
 
-    private fun combined(context: Context, style: WidgetStyle): RemoteViews {
+    /** Heights (dp) where the combined widget changes: below [NORMAL] it's compact; from [TALL] the Arabic shows too. */
+    private const val NORMAL = 250f
+    private const val TALL = 420f
+    private const val COMPACT = 0
+    private const val REGULAR = 1
+    private const val LARGE = 2
+
+    /**
+     * The combined widget comes in three heights: Android 12+ picks the one that fits as the widget
+     * is resized; older versions go by the size the launcher reports.
+     */
+    private fun combined(context: Context, style: WidgetStyle, id: Int): RemoteViews {
+        if (id == WidgetStyle.NONE) return combinedAt(context, style, REGULAR)
+        if (Build.VERSION.SDK_INT >= 31) return RemoteViews(mapOf(
+            android.util.SizeF(180f, 0f) to combinedAt(context, style, COMPACT),
+            android.util.SizeF(180f, NORMAL) to combinedAt(context, style, REGULAR),
+            android.util.SizeF(180f, TALL) to combinedAt(context, style, LARGE),
+        ))
+        val height = AppWidgetManager.getInstance(context).getAppWidgetOptions(id).getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT)
+        return combinedAt(context, style, when { height >= TALL -> LARGE; height >= NORMAL -> REGULAR; else -> COMPACT })
+    }
+
+    private fun combinedAt(context: Context, style: WidgetStyle, size: Int): RemoteViews {
+        val tall = size == LARGE
         val v = RemoteViews(context.packageName, R.layout.widget_combined)
         background(context, v, style)
         times(context, v, style)
         v.setOnClickPendingIntent(R.id.times, openApp(context))
+        if (size == COMPACT) {
+            // Short: everything a little smaller so the reminder keeps some room.
+            val sp = android.util.TypedValue.COMPLEX_UNIT_SP
+            v.setTextViewTextSize(R.id.city, sp, 13f)
+            v.setTextViewTextSize(R.id.left, sp, 12f)
+            v.setTextViewTextSize(R.id.prompt, sp, 13f)
+            nameIds.forEach { v.setTextViewTextSize(it, sp, 10f) }
+            timeIds.forEach { v.setTextViewTextSize(it, sp, 14f) }
+        }
         v.setInt(R.id.rule, "setBackgroundColor", (style.textColor(context) and 0x00FFFFFF) or 0x1F000000)
         val reminder = Muhib.current(context)
         val revealed = Muhib.isRevealed(context)
         v.setDisplayedChild(R.id.flipper, if (revealed) 1 else 0)
         if (revealed) {
-            v.setTextViewText(R.id.text, reminder.text)
-            v.setTextViewText(R.id.source, reminder.source)
+            // Room permitting, the Arabic sits above the meaning, as in the reminder widget.
+            val arabic = reminder.arabic?.takeIf { tall && it.length <= ARABIC_MAX_TALL }
+            v.setTextViewText(R.id.arabic, arabic.orEmpty())
+            v.setViewVisibility(R.id.arabic, if (arabic == null) View.GONE else View.VISIBLE)
+            v.setTextColor(R.id.arabic, style.textColor(context))
+            v.setTextViewText(R.id.text, f(context, reminder.text, Fonts.LIGHT))
+            v.setTextViewText(R.id.source, f(context, reminder.source, Fonts.REGULAR))
             v.setTextColor(R.id.text, style.textColor(context))
             v.setTextColor(R.id.source, style.dim(context))
             v.setOnClickPendingIntent(R.id.flipper, openApp(context))
@@ -217,14 +270,14 @@ object Widgets {
         val place = place(context)
         val m = place?.let { Moment(Times.get(context, it)) }
         if (place == null || m == null) {
-            v.setTextViewText(R.id.name, c.getString(R.string.app_name))
-            v.setTextViewText(R.id.left, "--:--")
-            v.setTextViewText(R.id.at, c.getString(R.string.widget_no_place))
+            v.setTextViewText(R.id.name, f(context, c.getString(R.string.app_name), Fonts.REGULAR))
+            v.setTextViewText(R.id.left, f(context, "--:--", Fonts.MEDIUM))
+            v.setTextViewText(R.id.at, f(context, c.getString(R.string.widget_no_place), Fonts.REGULAR))
             return v
         }
-        v.setTextViewText(R.id.name, Fmt.prayer(c, m.next))
-        v.setTextViewText(R.id.left, Fmt.left(c, m.nextAt - m.now))
-        v.setTextViewText(R.id.at, Fmt.time(c, m.nextAt, m.schedule.zone) + " · " + place.name.ifEmpty { c.getString(R.string.current_location) })
+        v.setTextViewText(R.id.name, f(context, Fmt.prayer(c, m.next), Fonts.REGULAR))
+        v.setTextViewText(R.id.left, f(context, Fmt.left(c, m.nextAt - m.now), Fonts.MEDIUM))
+        v.setTextViewText(R.id.at, f(context, Fmt.time(c, m.nextAt, m.schedule.zone) + " · " + place.name.ifEmpty { c.getString(R.string.current_location) }, Fonts.REGULAR))
         return v
     }
 
@@ -265,6 +318,10 @@ abstract class BaseWidget : AppWidgetProvider() {
     }
 
     override fun onDeleted(context: Context, ids: IntArray) = WidgetStyle.forget(context, ids)
+
+    /** Resized: redraw, since some widgets show more when there's room. */
+    override fun onAppWidgetOptionsChanged(context: Context, manager: AppWidgetManager, id: Int, options: android.os.Bundle) =
+        Widgets.refreshAll(context)
 }
 
 /** City, the six times, and the time left until the next one. Also receives the minute tick. */

@@ -12,7 +12,7 @@ class NightBar(context: Context, attrs: AttributeSet? = null) : View(context, at
     private val track = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = context.getColor(R.color.hairline); strokeCap = Paint.Cap.ROUND; strokeWidth = 4 * dp }
     private val fill = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = Accent.color(context); strokeCap = Paint.Cap.ROUND; strokeWidth = 4 * dp }
     private val mark = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = context.getColor(R.color.muted); strokeCap = Paint.Cap.ROUND; strokeWidth = 1.5f * dp }
-    private val ring = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = context.getColor(R.color.card) }
+    private val ring = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = Look.card(context) }
 
     var marks = floatArrayOf()
         set(value) { field = value; invalidate() }

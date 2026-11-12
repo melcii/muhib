@@ -55,7 +55,7 @@ object ColorPicker {
         val preview = TextView(activity).apply {
             gravity = Gravity.CENTER
             textSize = 15f
-            typeface = activity.resources.getFont(R.font.inter_medium)
+            typeface = Fonts.medium(activity)
             layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, px(56))
         }
         page.addView(preview)

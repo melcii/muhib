@@ -33,13 +33,15 @@ class WelcomeActivity : Activity() {
     private val demo = Handler(Looper.getMainLooper())
 
     override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(Lang.wrap(newBase))
+        super.attachBaseContext(Look.wrap(Lang.wrap(newBase)))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Fonts.apply(this)
         setContentView(R.layout.activity_welcome)
         Accent.paint(window.decorView)
+        Look.window(this)
         steps = listOf(findViewById(R.id.stepHello), findViewById(R.id.stepPlace), findViewById(R.id.stepWidget), findViewById(R.id.stepDone))
 
         if (Build.VERSION.SDK_INT >= 30) {

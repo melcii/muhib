@@ -5,7 +5,10 @@
         <item name="android:colorAccent">@color/accent</item>
         <item name="android:colorControlActivated">@color/accent</item>
         <item name="android:textColorPrimary">@color/ink</item>
-        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:fontFamily">?attr/fontRegular</item>
+        <item name="fontRegular">@font/inter</item>
+        <item name="fontLight">@font/inter_light</item>
+        <item name="fontMedium">@font/inter_medium</item>
         <item name="android:statusBarColor">@color/paper</item>
         <item name="android:navigationBarColor">@color/paper</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -15,7 +18,7 @@
     <style name="Muhib.Label" parent="">
         <item name="android:textSize">11sp</item>
         <item name="android:textColor">@color/muted</item>
-        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:fontFamily">?attr/fontMedium</item>
         <item name="android:letterSpacing">0.14</item>
         <item name="android:textAllCaps">true</item>
     </style>
@@ -23,7 +26,7 @@
     <style name="Muhib.Body" parent="">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/ink</item>
-        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:fontFamily">?attr/fontRegular</item>
         <item name="android:lineSpacingMultiplier">1.45</item>
         <item name="android:fallbackLineSpacing" tools:targetApi="28">false</item>
     </style>
@@ -31,7 +34,7 @@
     <style name="Muhib.Title" parent="">
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/ink</item>
-        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:fontFamily">?attr/fontLight</item>
         <item name="android:letterSpacing">-0.01</item>
         <item name="android:gravity">center</item>
     </style>
@@ -39,7 +42,7 @@
     <style name="Muhib.Link" parent="">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/accent</item>
-        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:fontFamily">?attr/fontMedium</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:minHeight">48dp</item>
         <item name="android:background">?android:attr/selectableItemBackground</item>
@@ -48,7 +51,7 @@
     <style name="Muhib.Pill" parent="">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/ink</item>
-        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:fontFamily">?attr/fontMedium</item>
         <item name="android:gravity">center</item>
         <item name="android:minHeight">44dp</item>
         <item name="android:paddingStart">20dp</item>
@@ -59,7 +62,7 @@
     <style name="Muhib.Button" parent="">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/paper</item>
-        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:fontFamily">?attr/fontMedium</item>
         <item name="android:letterSpacing">0.01</item>
         <item name="android:gravity">center</item>
         <item name="android:minHeight">56dp</item>
@@ -71,12 +74,12 @@
     <style name="Muhib.RowText" parent="">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/ink</item>
-        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:fontFamily">?attr/fontRegular</item>
     </style>
 
     <style name="Muhib.Segment" parent="">
         <item name="android:textSize">13sp</item>
-        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:fontFamily">?attr/fontMedium</item>
         <item name="android:gravity">center</item>
         <item name="android:minHeight">36dp</item>
         <item name="android:paddingStart">14dp</item>
@@ -140,5 +143,27 @@
     <style name="Theme.Muhib.Invisible" parent="android:Theme.Translucent.NoTitleBar">
         <item name="android:windowAnimationStyle">@null</item>
         <item name="android:windowNoDisplay">false</item>
+    </style>
+
+    <!-- Font choices, laid over the theme. Only fonts built into Android, so widgets can match. -->
+    <style name="Font.Serif" parent="">
+        <item name="fontRegular">serif</item>
+        <item name="fontLight">serif</item>
+        <item name="fontMedium">serif</item>
+    </style>
+    <style name="Font.Airy" parent="">
+        <item name="fontRegular">sans-serif-light</item>
+        <item name="fontLight">sans-serif-thin</item>
+        <item name="fontMedium">sans-serif</item>
+    </style>
+    <style name="Font.Mono" parent="">
+        <item name="fontRegular">monospace</item>
+        <item name="fontLight">monospace</item>
+        <item name="fontMedium">monospace</item>
+    </style>
+    <style name="Font.Playful" parent="">
+        <item name="fontRegular">casual</item>
+        <item name="fontLight">casual</item>
+        <item name="fontMedium">casual</item>
     </style>
 </resources>

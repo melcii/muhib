@@ -65,7 +65,7 @@ class MainActivity : Activity(), SensorEventListener {
     private fun dp(v: Int) = (v * resources.displayMetrics.density).roundToInt()
 
     override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(Lang.wrap(newBase))
+        super.attachBaseContext(Look.wrap(Lang.wrap(newBase)))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,8 +75,10 @@ class MainActivity : Activity(), SensorEventListener {
             finish()
             return
         }
+        Fonts.apply(this)
         setContentView(R.layout.activity_main)
         Accent.paint(window.decorView)
+        Look.window(this)
         createdLang = Lang.current(this)
         createdAccent = Accent.key(this)
 
@@ -411,7 +413,7 @@ class MainActivity : Activity(), SensorEventListener {
                 marginStart = dp(20); marginEnd = dp(20)
             }
         })
-        val medium = resources.getFont(R.font.inter_medium)
+        val medium = Fonts.medium(this)
         val row = LinearLayout(this).apply { setPadding(dp(8), dp(12), dp(8), dp(12)) }
         cells.forEach { (label, at) ->
             val lit = at == current

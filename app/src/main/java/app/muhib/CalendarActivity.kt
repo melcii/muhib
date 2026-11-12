@@ -28,13 +28,15 @@ class CalendarActivity : Activity() {
     private var flungAt = 0L
 
     override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(Lang.wrap(newBase))
+        super.attachBaseContext(Look.wrap(Lang.wrap(newBase)))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Fonts.apply(this)
         setContentView(R.layout.activity_calendar)
         Accent.paint(window.decorView)
+        Look.window(this)
         if (Build.VERSION.SDK_INT >= 30) {
             window.setDecorFitsSystemWindows(false)
             findViewById<View>(R.id.scroll).setOnApplyWindowInsetsListener { v, insets ->
