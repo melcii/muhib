@@ -16,31 +16,32 @@
     </style>
 
     <style name="Muhib.Label" parent="">
-        <item name="android:textSize">11sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/muted</item>
         <item name="android:fontFamily">?attr/fontMedium</item>
-        <item name="android:letterSpacing">0.14</item>
+        <item name="android:letterSpacing">0.06</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
     <style name="Muhib.Body" parent="">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:fontFamily">?attr/fontRegular</item>
-        <item name="android:lineSpacingMultiplier">1.45</item>
+        <item name="android:lineSpacingMultiplier">1.35</item>
         <item name="android:fallbackLineSpacing" tools:targetApi="28">false</item>
+        <item name="android:letterSpacing">-0.005</item>
     </style>
 
     <style name="Muhib.Title" parent="">
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">34sp</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:fontFamily">?attr/fontLight</item>
-        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:letterSpacing">-0.015</item>
         <item name="android:gravity">center</item>
     </style>
 
     <style name="Muhib.Link" parent="">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/accent</item>
         <item name="android:fontFamily">?attr/fontMedium</item>
         <item name="android:gravity">center_vertical</item>
@@ -49,7 +50,7 @@
     </style>
 
     <style name="Muhib.Pill" parent="">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:fontFamily">?attr/fontMedium</item>
         <item name="android:gravity">center</item>
@@ -60,10 +61,10 @@
     </style>
 
     <style name="Muhib.Button" parent="">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:textColor">@color/paper</item>
         <item name="android:fontFamily">?attr/fontMedium</item>
-        <item name="android:letterSpacing">0.01</item>
+        <item name="android:letterSpacing">0</item>
         <item name="android:gravity">center</item>
         <item name="android:minHeight">56dp</item>
         <item name="android:paddingStart">24dp</item>
@@ -72,13 +73,14 @@
     </style>
 
     <style name="Muhib.RowText" parent="">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:fontFamily">?attr/fontRegular</item>
+        <item name="android:letterSpacing">-0.005</item>
     </style>
 
     <style name="Muhib.Segment" parent="">
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">?attr/fontMedium</item>
         <item name="android:gravity">center</item>
         <item name="android:minHeight">36dp</item>
@@ -156,14 +158,18 @@
         <item name="fontLight">sans-serif-thin</item>
         <item name="fontMedium">sans-serif</item>
     </style>
+    <!-- Cutive Mono, a real typewriter face with every Turkish letter, for reading. It's wide, so
+         times and labels stay in a clean sans and still fit. -->
     <style name="Font.Mono" parent="">
-        <item name="fontRegular">monospace</item>
-        <item name="fontLight">monospace</item>
-        <item name="fontMedium">monospace</item>
+        <item name="fontRegular">serif-monospace</item>
+        <item name="fontLight">serif-monospace</item>
+        <item name="fontMedium">sans-serif-medium</item>
     </style>
+    <!-- Dancing Script for reading; labels, buttons and times stay in a clean sans. (Coming Soon,
+         the "casual" family, lacks ğ, ş and İ.) -->
     <style name="Font.Playful" parent="">
-        <item name="fontRegular">casual</item>
-        <item name="fontLight">casual</item>
-        <item name="fontMedium">casual</item>
+        <item name="fontRegular">cursive</item>
+        <item name="fontLight">cursive</item>
+        <item name="fontMedium">sans-serif-medium</item>
     </style>
 </resources>

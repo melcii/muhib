@@ -20,8 +20,8 @@ object Fonts {
         Font(R.string.font_inter, 0, null, null, null),
         Font(R.string.font_serif, R.style.Font_Serif, "serif", "serif", "serif"),
         Font(R.string.font_airy, R.style.Font_Airy, "sans-serif-light", "sans-serif-thin", "sans-serif"),
-        Font(R.string.font_mono, R.style.Font_Mono, "monospace", "monospace", "monospace"),
-        Font(R.string.font_playful, R.style.Font_Playful, "casual", "casual", "casual"),
+        Font(R.string.font_mono, R.style.Font_Mono, "serif-monospace", "serif-monospace", "sans-serif-medium"),
+        Font(R.string.font_playful, R.style.Font_Playful, "cursive", "cursive", "sans-serif-medium"),
     )
 
     private const val KEY = "font"

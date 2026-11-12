@@ -165,7 +165,7 @@ object Widgets {
         val highlight = style.highlight(context)
         v.setTextColor(R.id.left, highlight)
         v.setOnClickPendingIntent(R.id.header, locate(context))
-        c.resources.getStringArray(R.array.prayers_short).forEachIndexed { i, n -> v.setTextViewText(nameIds[i], f(context, n, Fonts.REGULAR)) }
+        c.resources.getStringArray(R.array.prayers_short).forEachIndexed { i, n -> v.setTextViewText(nameIds[i], f(context, n, Fonts.MEDIUM)) }
 
         val place = place(context)
         val schedule = place?.let { Times.get(context, it) }

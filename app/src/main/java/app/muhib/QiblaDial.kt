@@ -31,14 +31,39 @@ class QiblaDial(context: Context, attrs: AttributeSet? = null) : View(context, a
     private val box = RectF()
     private val pointer = Path()
 
-    /** Where the phone points, degrees from true north. */
-    var heading = 0f
-        set(value) { field = value; invalidate() }
+    /**
+     * Where the phone points, degrees from true north. The dial doesn't jump there: each frame it
+     * glides part of the way, so sensor noise turns into a calm, continuous movement.
+     */
+    var heading = Float.NaN
+        set(value) {
+            field = value
+            if (shown.isNaN()) shown = value
+            if (!gliding) { gliding = true; lastFrame = 0L; postInvalidateOnAnimation() }
+        }
+
+    /** The angle actually drawn, easing toward [heading]. */
+    private var shown = Float.NaN
+    private var gliding = false
+    private var lastFrame = 0L
 
     var qibla = 0f
         set(value) { field = value; invalidate() }
 
-    val facing get() = abs(((qibla - heading) % 360 + 540) % 360 - 180) < 4
+    val facing get() = !shown.isNaN() && abs(((qibla - shown) % 360 + 540) % 360 - 180) < 4
+
+    /** Moves [shown] toward [heading] by how much time passed: smooth at any frame rate. */
+    private fun glide() {
+        if (heading.isNaN()) return
+        val now = System.nanoTime()
+        val dt = if (lastFrame == 0L) 0.016f else ((now - lastFrame) / 1e9f).coerceIn(0f, 0.1f)
+        lastFrame = now
+        val diff = ((heading - shown) % 360 + 540) % 360 - 180
+        // About 90% of the way in a quarter second; the short way round.
+        val step = diff * (1f - kotlin.math.exp(-dt / GLIDE))
+        shown = (shown + step + 360) % 360
+        if (abs(diff) > 0.05f) postInvalidateOnAnimation() else gliding = false
+    }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val size = min(MeasureSpec.getSize(widthMeasureSpec), (280 * dp).toInt())
@@ -46,6 +71,8 @@ class QiblaDial(context: Context, attrs: AttributeSet? = null) : View(context, a
     }
 
     override fun onDraw(canvas: Canvas) {
+        glide()
+        val heading = if (shown.isNaN()) 0f else shown
         val cx = width / 2f
         val cy = height / 2f
         val r = min(cx, cy) - 22 * dp
@@ -89,5 +116,10 @@ class QiblaDial(context: Context, attrs: AttributeSet? = null) : View(context, a
         fillPaint.color = 0xFFD4AF6A.toInt()
         canvas.drawRect(cx - k, cy - r - k * 0.45f, cx + k, cy - r - k * 0.15f, fillPaint)
         canvas.restore()
+    }
+
+    private companion object {
+        /** Seconds for the dial to cover about two thirds of the way to a new reading. */
+        const val GLIDE = 0.11f
     }
 }

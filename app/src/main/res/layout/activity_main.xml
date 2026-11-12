@@ -19,9 +19,9 @@
             android:clipChildren="false"
             android:clipToPadding="false"
             android:orientation="vertical"
-            android:paddingStart="24dp"
+            android:paddingStart="20dp"
             android:paddingTop="12dp"
-            android:paddingEnd="24dp"
+            android:paddingEnd="20dp"
             android:paddingBottom="40dp">
 
             <!-- The place (tap to switch or add), the calendar, settings -->
@@ -29,7 +29,7 @@
                 android:id="@+id/topBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
+                android:gravity="bottom"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -84,12 +84,14 @@
                 <ImageView
                     android:id="@+id/openCalendar"
                     style="@style/Muhib.Icon"
+                    android:layout_marginBottom="2dp"
                     android:contentDescription="@string/tab_calendar"
                     android:src="@drawable/ic_calendar" />
 
                 <ImageView
                     android:id="@+id/openSettings"
                     style="@style/Muhib.Icon"
+                    android:layout_marginBottom="2dp"
                     android:layout_marginEnd="-12dp"
                     android:contentDescription="@string/settings"
                     android:src="@drawable/ic_tune" />
@@ -99,9 +101,10 @@
                 android:id="@+id/dateLine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
+                android:lineSpacingMultiplier="1.2"
                 android:textColor="@color/muted"
-                android:textSize="13sp" />
+                android:textSize="14sp" />
 
             <!-- Prayer times: swipe between Simple, Compact, Timeline and Qibla -->
             <LinearLayout
@@ -519,9 +522,10 @@
                             android:fallbackLineSpacing="false"
                             android:fontFamily="?attr/fontLight"
                             android:gravity="center"
-                            android:lineSpacingMultiplier="1.4"
+                            android:lineSpacingMultiplier="1.3"
+                            android:letterSpacing="-0.005"
                             android:textColor="@color/ink"
-                            android:textSize="19sp" />
+                            android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/source"

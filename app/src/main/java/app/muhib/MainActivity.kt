@@ -448,6 +448,8 @@ class MainActivity : Activity(), SensorEventListener {
     private val rotationSensor by lazy { sensors.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR) }
     private var compassOn = false
     private var heading = Float.NaN
+    private var headingX = 1.0
+    private var headingY = 0.0
     private var declination = 0f
     private var wasFacing = false
     private var compassAccuracy = SensorManager.SENSOR_STATUS_ACCURACY_HIGH
@@ -548,7 +550,7 @@ class MainActivity : Activity(), SensorEventListener {
     /** The compass runs only while the Qibla page is on screen. */
     private fun startCompass() {
         if (compassOn || find<Pager>(R.id.pager).page != QIBLA || rotationSensor == null || !resumed) return
-        compassOn = sensors.registerListener(this, rotationSensor, SensorManager.SENSOR_DELAY_UI)
+        compassOn = sensors.registerListener(this, rotationSensor, SensorManager.SENSOR_DELAY_GAME)
     }
 
     private fun stopCompass() {
@@ -574,12 +576,15 @@ class MainActivity : Activity(), SensorEventListener {
         }
         SensorManager.remapCoordinateSystem(matrix, x, y, remapped)
         SensorManager.getOrientation(remapped, orientation)
-        val target = ((Math.toDegrees(orientation[0].toDouble()).toFloat() + declination) + 360) % 360
-        // Ease toward the new reading, the short way round, so the dial doesn't jitter.
-        heading = if (heading.isNaN()) target else {
-            val diff = ((target - heading + 540) % 360) - 180
-            (heading + diff * 0.15f + 360) % 360
-        }
+        val raw = Math.toRadians(Math.toDegrees(orientation[0].toDouble()) + declination)
+        // Average the direction as a unit vector, so readings near north (359° and 1°) average
+        // correctly, then ignore wobbles under half a degree. The dial glides to the result.
+        if (heading.isNaN()) { headingX = kotlin.math.cos(raw); headingY = kotlin.math.sin(raw) }
+        headingX += (kotlin.math.cos(raw) - headingX) * SMOOTHING
+        headingY += (kotlin.math.sin(raw) - headingY) * SMOOTHING
+        val target = ((Math.toDegrees(kotlin.math.atan2(headingY, headingX)).toFloat()) + 360) % 360
+        if (!heading.isNaN() && kotlin.math.abs(((target - heading + 540) % 360) - 180) < 0.5f) return
+        heading = target
         val dial = find<QiblaDial>(R.id.dial)
         dial.heading = heading
         if (dial.facing && !wasFacing) dial.performHapticFeedback(HapticFeedbackConstants.CONFIRM)
@@ -1030,6 +1035,8 @@ class MainActivity : Activity(), SensorEventListener {
         private const val OLD_FIX = 6 * 3_600_000L
         private const val ROUGH_FIX = 5_000f
         private const val BLUR_RADIUS = 40f
+        /** How much of each new compass reading counts (with readings about every 20 ms). */
+        private const val SMOOTHING = 0.08
         private const val COVERED_HEIGHT = 250
     }
 }
