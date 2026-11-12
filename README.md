@@ -48,16 +48,20 @@ Settings has two sides, **Prayer** and **Muhib**. What both share sits underneat
 - One alarm is set at a time for prayer notes, and one for the next reminder.
 
 ## Content
-All reminders live in [`app/src/main/assets/content.json`](app/src/main/assets/content.json). Each item has these fields:
-- `id`
-- `type`: ayah, hadith, sunnah or chapter
-- `arabic`
-- `text`
-- `source`
-- `more`: the "a little more" note
-- optional `link` and `headline`
+The reminders are kept in a Google Sheet, one row per reminder:
+- **Shared columns:** `id` (unique; never reuse one), `type` (ayah, hadith, sunnah, chapter or dua), `link`, `arabic`.
+- **Per language:** three columns named by the language code: `en_text`, `en_source`, `en_more`, then `tr_...`. Any other columns, such as notes, are ignored.
+- **Required:** English text and source. A missing translation shows the English.
+- **Links:** full `https://` addresses only. Anything else is refused, and a site other than quran.com or sunnah.com gets a warning to double-check.
+- **New language:** add its three columns (for example `ar_text`). The app shows a language once it supports that language.
 
-A `tr` object holds the Turkish `text`, `source`, `more` and optional `headline`.
+To ship changes, download the sheet as CSV (File → Download → CSV) and run:
+
+```
+python3 tools/content.py import reminders.csv
+```
+
+This checks the rows (missing ids, duplicates, empty English, unsafe links) and writes [`app/src/main/assets/content.json`](app/src/main/assets/content.json), which the app reads. `python3 tools/content.py export reminders.csv` goes the other way.
 
 ## Sources
 - Qur'an Arabic text: the [Tanzil Project](https://tanzil.net).

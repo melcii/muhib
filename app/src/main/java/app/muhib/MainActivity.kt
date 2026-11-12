@@ -645,7 +645,6 @@ class MainActivity : Activity(), SensorEventListener {
     private fun renderReminder() {
         val reminder = Muhib.current(this)
         val revealed = Muhib.isRevealed(this)
-        find<TextView>(R.id.headline).text = reminder.headline
         find<TextView>(R.id.arabic).apply {
             text = reminder.arabic
             visibility = if (reminder.arabic == null) View.GONE else View.VISIBLE
@@ -658,8 +657,10 @@ class MainActivity : Activity(), SensorEventListener {
         }
         find<TextView>(R.id.sourceFull).text = reminder.source
         find<TextView>(R.id.openSource).apply {
-            visibility = if (reminder.link == null) View.GONE else View.VISIBLE
-            setOnClickListener { reminder.link?.let { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(it))) } }
+            // Only https links open, so a bad link in the content can't send anyone elsewhere.
+            val link = reminder.link?.let { Uri.parse(it) }?.takeIf { it.scheme == "https" && !it.host.isNullOrEmpty() }
+            visibility = if (link == null) View.GONE else View.VISIBLE
+            setOnClickListener { link?.let { startActivity(Intent(Intent.ACTION_VIEW, it)) } }
         }
         find<ImageView>(R.id.veilStar).setColorFilter(Accent.color(this))
         if (!revealing) setCovered(!revealed, reminder)

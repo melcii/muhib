@@ -1,17 +1,15 @@
 {
-  "_note": "Demo content for Muhib. Types: ayah, hadith, sunnah, chapter. 'headline' is optional and overrides the default \"This <type> came when you needed it the most\". Qur'an Arabic is from the Tanzil Project (tanzil.net). Hadith Arabic and numbering checked against the standard collections. English meanings are simple renderings written for this demo. Turkish ('tr') renderings were also written for this demo and should be reviewed by a Turkish speaker.",
+  "_note": "Muhib's reminders, built from the reminders spreadsheet by tools/content.py. Types: ayah, hadith, sunnah, chapter, dua. Qur'an Arabic is from the Tanzil Project (tanzil.net). Hadith Arabic and numbering checked against the standard collections. English meanings are simple renderings written for this demo. Turkish ('tr') renderings were also written for this demo and should be reviewed by a Turkish speaker.",
   "items": [
     {
       "id": "ayah-94-5",
       "type": "ayah",
-      "headline": "These ayat came when you needed them the most",
       "arabic": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا\nإِنَّ مَعَ الْعُسْرِ يُسْرًا",
       "text": "So surely with hardship comes ease. Surely with hardship comes ease.",
       "source": "Qur'an 94:5–6 · Surah ash-Sharh",
       "more": "Allah says it twice. Scholars of tafsir noticed that “the hardship” (al-ʿusr) carries the definite article both times — it is the same hardship — while “ease” (yusr) does not, pointing to more than one ease. From this it was said among the early Muslims: one hardship will never overpower two eases.\n\nThis surah came down in Makkah, in some of the hardest years of the Prophet's ﷺ life. It was said to him first, and then to every tired heart after him.",
       "link": "https://quran.com/94/5-6",
       "tr": {
-        "headline": "Bu ayetler tam ihtiyacın olduğu anda geldi",
         "text": "Şüphesiz zorlukla beraber bir kolaylık vardır. Gerçekten de zorlukla beraber bir kolaylık vardır.",
         "source": "Kur'an 94:5–6 · İnşirah Suresi",
         "more": "Allah bunu iki kez söylüyor. Tefsir âlimleri, “zorluk” (el-usr) kelimesinin iki seferde de belirli geldiğine, yani aynı zorluk olduğuna; “kolaylık” (yusr) kelimesinin ise belirsiz geldiğine, yani birden fazla kolaylığa işaret ettiğine dikkat çekmişlerdir. Bu yüzden ilk Müslümanlar arasında şöyle denmiştir: Bir zorluk iki kolaylığa asla galip gelemez.\n\nBu sure, Peygamber'in ﷺ hayatının en zor yıllarından birinde Mekke'de indi. Önce ona, sonra ondan sonra gelen her yorgun kalbe söylendi."
@@ -76,14 +74,12 @@
     {
       "id": "ayah-65-2",
       "type": "ayah",
-      "headline": "These ayat came when you needed them the most",
       "arabic": "وَمَنْ يَتَّقِ اللَّهَ يَجْعَلْ لَهُ مَخْرَجًا\nوَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ ۚ وَمَنْ يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
       "text": "Whoever is mindful of Allah, He will make a way out for him, and provide for him from where he never expected. And whoever puts his trust in Allah, He is enough for him.",
       "source": "Qur'an 65:2–3 · Surah at-Talaq",
       "more": "These words come in the middle of a surah about divorce, one of the most painful and uncertain moments in a person's life. Right there, Allah promises a way out, and provision from places you would never think to look.\n\n“He is enough for him” (fa huwa ḥasbuh). Not enough for part of the problem. Enough.",
       "link": "https://quran.com/65/2-3",
       "tr": {
-        "headline": "Bu ayetler tam ihtiyacın olduğu anda geldi",
         "text": "Kim Allah'tan sakınırsa, Allah ona bir çıkış yolu açar ve onu hiç ummadığı yerden rızıklandırır. Kim Allah'a tevekkül ederse, O ona yeter.",
         "source": "Kur'an 65:2–3 · Talak Suresi",
         "more": "Bu sözler, boşanmayı anlatan bir surenin ortasında gelir; bir insanın hayatındaki en acı ve en belirsiz anlardan biri. Tam orada Allah bir çıkış yolu ve aklına bile gelmeyecek yerlerden rızık vaat eder.\n\n“O ona yeter” (fe huve hasbuh). Sorunun bir kısmına değil. Tamamen yeter."

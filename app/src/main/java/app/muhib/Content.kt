@@ -6,7 +6,6 @@ import org.json.JSONObject
 data class Reminder(
     val id: String,
     val type: String,
-    val headline: String,
     val arabic: String?,
     val text: String,
     val source: String,
@@ -15,8 +14,9 @@ data class Reminder(
 )
 
 /**
- * Loads the reminders from assets/content.json. Swap that file to change what Muhib shows.
- * Each item may carry a "tr" object with Turkish headline/text/source/more.
+ * Loads the reminders from assets/content.json, which tools/content.py builds from the
+ * reminders spreadsheet. Each item may carry a block per language ("tr", ...) with its
+ * text/source/more; anything missing falls back to English.
  */
 object Content {
     @Volatile private var cache: Pair<String, List<Reminder>>? = null
@@ -34,12 +34,11 @@ object Content {
         val items = JSONObject(json).getJSONArray("items")
         return (0 until items.length()).map { i ->
             val o = items.getJSONObject(i)
-            val local = if (lang == Lang.TR) o.optJSONObject("tr") ?: o else o
-            val type = o.getString("type")
+            // English is the item itself; any other language is a block named by its code ("tr", "ar", ...).
+            val local = if (lang == Lang.EN) o else o.optJSONObject(lang) ?: o
             Reminder(
                 id = o.getString("id"),
-                type = type,
-                headline = local.optString("headline").ifEmpty { defaultHeadline(type, lang) },
+                type = o.getString("type"),
                 arabic = o.optString("arabic").ifEmpty { null },
                 text = local.optString("text").ifEmpty { o.getString("text") },
                 source = local.optString("source").ifEmpty { o.getString("source") },
@@ -48,19 +47,4 @@ object Content {
             )
         }
     }
-
-    private fun defaultHeadline(type: String, lang: String) =
-        if (lang == Lang.TR) {
-            val name = when (type) {
-                "ayah" -> "ayet"
-                "hadith" -> "hadis"
-                "sunnah" -> "sünnet"
-                "chapter" -> "bölüm"
-                "dua" -> "dua"
-                else -> type
-            }
-            "Bu $name tam ihtiyacın olduğu anda geldi"
-        } else {
-            "This ${if (type == "dua") "du'a" else type} came when you needed it the most"
-        }
 }
